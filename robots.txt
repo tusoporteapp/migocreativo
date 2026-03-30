@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: [https://migocreativo.com/sitemap.xml](https://migocreativo.com/sitemap.xml)
