@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es-419">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de DPI para Estampado | Migo Creativo</title>
+    <meta name="description" content="Herramienta gratuita para calcular si tu imagen tiene la resolución suficiente (DPI) para ser estampada en el tamaño que deseas.">
+    <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>
+        .mc-tool-card { background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius); padding: 2.5rem; max-width: 600px; margin: 0 auto; box-shadow: var(--mc-shadow); }
+        .form-control { background: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); color: var(--mc-text); padding: 12px 16px; border-radius: var(--mc-radius-sm); }
+        .form-control:focus { background: var(--mc-bg-surface); border-color: var(--mc-orange); box-shadow: 0 0 0 0.25rem rgba(255,122,0,.25); color: var(--mc-text); }
+        .mc-result-box { margin-top: 2rem; padding: 1.5rem; border-radius: var(--mc-radius-sm); display: none; text-align: center; }
+        .mc-result-success { background: rgba(34,197,94,.15); border: 1px solid rgba(34,197,94,.3); color: #4ade80; }
+        .mc-result-warning { background: rgba(234,179,8,.15); border: 1px solid rgba(234,179,8,.3); color: #facc15; }
+        .mc-result-danger { background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.3); color: #f87171; }
+        .mc-dpi-number { font-size: 3rem; font-weight: 800; display: block; line-height: 1.2; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
+                <span>MIGOCREATIVO</span>
+            </a>
+        </div>
+    </nav>
+
+    <header style="padding-top:120px; padding-bottom: 40px; text-align: center;">
+        <div class="container">
+            <span class="mc-badge mb-3">🛠️ Herramienta Gratuita</span>
+            <h1 class="mc-section-title">Calculadora de <span class="mc-gradient-text">DPI</span></h1>
+            <p class="mc-section-subtitle">Descubre si tu imagen tiene la resolución necesaria para imprimirla al tamaño que deseas sin perder calidad.</p>
+        </div>
+    </header>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="mc-tool-card mc-reveal">
+                <form id="dpi-form">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">1. ¿Qué tamaño tiene tu imagen en píxeles?</label>
+                        <div class="d-flex gap-3">
+                            <input type="number" class="form-control" id="img-width" placeholder="Ancho (px)" required>
+                            <span class="d-flex align-items-center">X</span>
+                            <input type="number" class="form-control" id="img-height" placeholder="Alto (px)" required>
+                        </div>
+                        <small class="text-muted mt-2 d-block">Ej: 2000 x 3000</small>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">2. ¿A qué tamaño quieres estamparla? (centímetros)</label>
+                        <div class="d-flex gap-3">
+                            <input type="number" class="form-control" id="print-width" placeholder="Ancho (cm)" required>
+                            <span class="d-flex align-items-center">X</span>
+                            <input type="number" class="form-control" id="print-height" placeholder="Alto (cm)" required>
+                        </div>
+                        <small class="text-muted mt-2 d-block">Ej: 28 x 40</small>
+                    </div>
+
+                    <button type="submit" class="mc-btn-primary w-100 justify-content-center mt-2">
+                        Calcular Resolución
+                    </button>
+                </form>
+
+                <div id="result-box" class="mc-result-box">
+                    <span id="result-dpi" class="mc-dpi-number">0 DPI</span>
+                    <h4 id="result-title" class="fw-bold mb-2"></h4>
+                    <p id="result-msg" class="mb-0"></p>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <p style="color: var(--mc-text-muted);">¿La resolución es muy baja? Yo te ayudo a vectorizarla o redibujarla.</p>
+                <a href="https://wa.me/573023579755" class="mc-btn-outline">💬 Consultar por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mc-footer mt-5"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <script src="../assets/js/calculadora-dpi.js"></script>
+
+        <script>
+        // Trigger reveal animations on load for tool pages
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.querySelectorAll('.mc-reveal').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+    </script>
+    <script src="../assets/js/migobot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es-419">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de Costos de Estampado | Migo Creativo</title>
+    <meta name="description" content="Calcula cuánto deberías cobrar por tus servicios de estampado (DTF, Sublimación) en Colombia para asegurar tu rentabilidad.">
+    <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>
+        .mc-tool-card { background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius); padding: 2.5rem; max-width: 700px; margin: 0 auto; box-shadow: var(--mc-shadow); }
+        .form-control, .form-select { background-color: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); color: var(--mc-text); padding: 12px 16px; border-radius: var(--mc-radius-sm); }
+        .form-control:focus, .form-select:focus { border-color: var(--mc-orange); box-shadow: 0 0 0 0.25rem rgba(255,122,0,.25); color: var(--mc-text); }
+        .mc-result-box { margin-top: 2.5rem; border-top: 2px solid var(--mc-glass-border); padding-top: 2rem; display: none; }
+        .mc-price-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: var(--mc-text-muted); font-size: 1.05rem; }
+        .mc-price-total { display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dashed var(--mc-glass-border); font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .mc-price-unit { display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 1.2rem; font-weight: 700; color: var(--mc-orange-light); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
+                <span>MIGOCREATIVO</span>
+            </a>
+        </div>
+    </nav>
+
+    <header style="padding-top:120px; padding-bottom: 40px; text-align: center;">
+        <div class="container">
+            <span class="mc-badge mb-3">🛠️ Herramienta Gratuita</span>
+            <h1 class="mc-section-title">Calculadora de <span class="mc-gradient-text">Costos</span></h1>
+            <p class="mc-section-subtitle">No regales tu trabajo. Ingresa los datos y descubre cuánto deberías cobrar por tus servicios en Colombia (COP).</p>
+        </div>
+    </header>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="mc-tool-card mc-reveal">
+                <form id="costos-form">
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">1. Técnica a utilizar</label>
+                            <select class="form-select" id="c-tecnica" required>
+                                <option value="dtf_a4">DTF Tamaño A4</option>
+                                <option value="dtf_a3">DTF Tamaño A3</option>
+                                <option value="sublimacion_a4">Sublimación A4</option>
+                                <option value="sublimacion_taza">Sublimación (Taza 11oz)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">2. Cantidad de unidades</label>
+                            <input type="number" class="form-control" id="c-cantidad" value="1" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">3. ¿Incluyes la prenda/material?</label>
+                            <select class="form-select" id="c-prenda" required>
+                                <option value="no">No, el cliente la trae ($0)</option>
+                                <option value="basica">Camiseta Básica (~$12.000)</option>
+                                <option value="premium">Camiseta Premium (~$20.000)</option>
+                                <option value="hoodie">Hoodie / Buzo (~$35.000)</option>
+                                <option value="taza">Taza Blanca 11oz (~$4.000)</option>
+                                <option value="custom">Ingresar precio manual...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6" id="div-costo-prenda" style="display:none;">
+                            <label class="form-label fw-bold">Costo de Prenda (COP)</label>
+                            <input type="number" class="form-control" id="c-prenda-costo" value="0">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">4. Margen de Ganancia (%)</label>
+                            <select class="form-select" id="c-margen" required>
+                                <option value="30">30% (Volumen alto)</option>
+                                <option value="40" selected>40% (Recomendado)</option>
+                                <option value="50">50% (Trabajos únicos / Premium)</option>
+                                <option value="60">60% (Tu propia marca)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">5. ¿Cobrar diseño?</label>
+                            <select class="form-select" id="c-diseno" required>
+                                <option value="0">No, ya viene listo para imprimir</option>
+                                <option value="20000">Sí, vectorización simple ($20.000)</option>
+                                <option value="50000">Sí, diseño complejo ($50.000)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="mc-btn-primary w-100 justify-content-center mt-2">
+                        Calcular Presupuesto Sugerido
+                    </button>
+                </form>
+
+                <div id="result-box" class="mc-result-box">
+                    <h4 class="fw-bold mb-4 text-center">Desglose Estimado (COP)</h4>
+                    
+                    <div class="mc-price-row">
+                        <span>Costo Producción (Material + Tinta + Luz):</span>
+                        <span id="res-prod">$0</span>
+                    </div>
+                    <div class="mc-price-row">
+                        <span>Costo Prendas:</span>
+                        <span id="res-prendas">$0</span>
+                    </div>
+                    <div class="mc-price-row">
+                        <span>Costo Diseño (1 vez):</span>
+                        <span id="res-diseno">$0</span>
+                    </div>
+                    
+                    <div class="mc-price-total">
+                        <span>PRECIO TOTAL SUGERIDO:</span>
+                        <span id="res-total">$0</span>
+                    </div>
+                    <div class="mc-price-unit">
+                        <span>Precio Sugerido por Unidad:</span>
+                        <span id="res-unit">$0</span>
+                    </div>
+
+                    <div class="mt-4 p-3 rounded" style="background: rgba(255,122,0,.1); border: 1px solid rgba(255,122,0,.2);">
+                        <p class="mb-0 text-sm" style="color: var(--mc-orange-light); font-size: 0.9rem;">
+                            <strong>💡 Nota:</strong> Estos costos son un promedio del mercado colombiano para pequeños y medianos talleres. Incluyen estimación de desgaste de equipos (depreciación) y consumo eléctrico de la plancha.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="../academia/como-cotizar-servicios-estampado.html" class="mc-btn-outline">📚 Aprender a cotizar (Lección Completa)</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mc-footer mt-5"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <script src="../assets/js/calculadora-costos.js"></script>
+
+        <script>
+        // Trigger reveal animations on load for tool pages
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.querySelectorAll('.mc-reveal').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+    </script>
+    <script src="../assets/js/migobot.js"></script>
+
+</body>
+</html>

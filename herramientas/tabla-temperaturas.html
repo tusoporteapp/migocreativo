@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es-419">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tabla de Temperaturas para Estampado | Migo Creativo</title>
+    <meta name="description" content="Encuentra el tiempo, temperatura y presión exactos para estampar DTF, Sublimación o Vinil según el material.">
+    <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>
+        .mc-tool-card { background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius); padding: 2rem; max-width: 800px; margin: 0 auto; box-shadow: var(--mc-shadow); }
+        .form-select { background-color: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); color: var(--mc-text); padding: 12px 16px; border-radius: var(--mc-radius-sm); cursor: pointer; }
+        .form-select:focus { border-color: var(--mc-orange); box-shadow: 0 0 0 0.25rem rgba(255,122,0,.25); }
+        .mc-param-card { background: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius-sm); padding: 1.5rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .mc-param-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .mc-param-value { font-size: 2rem; font-weight: 800; color: var(--mc-orange-light); line-height: 1.2; }
+        .mc-param-label { color: var(--mc-text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
+                <span>MIGOCREATIVO</span>
+            </a>
+        </div>
+    </nav>
+
+    <header style="padding-top:120px; padding-bottom: 40px; text-align: center;">
+        <div class="container">
+            <span class="mc-badge mb-3">🛠️ Herramienta Gratuita</span>
+            <h1 class="mc-section-title">Parámetros de <span class="mc-gradient-text">Plancha</span></h1>
+            <p class="mc-section-subtitle">Selecciona la técnica y el material para obtener los parámetros exactos (Tiempo, Temperatura, Presión).</p>
+        </div>
+    </header>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="mc-tool-card mc-reveal">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Técnica</label>
+                        <select class="form-select" id="tec-select">
+                            <option value="dtf_estandar">DTF (Polvo Estándar)</option>
+                            <option value="dtf_premium">DTF (Polvo Premium/Baja Temp)</option>
+                            <option value="sublimacion_tela">Sublimación (Telas)</option>
+                            <option value="sublimacion_taza">Sublimación (Tazas)</option>
+                            <option value="sublimacion_mousepad">Sublimación (Mousepad)</option>
+                            <option value="vinil_detalle">Vinil Textil (Detalle)</option>
+                            <option value="vinil_holografico">Vinil Holográfico/Especial</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">Material / Prenda</label>
+                        <select class="form-select" id="mat-select">
+                            <!-- Options populated by JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-3" id="params-container">
+                    <div class="col-md-4">
+                        <div class="mc-param-card">
+                            <div class="mc-param-icon">🌡️</div>
+                            <div class="mc-param-value" id="val-temp">160°C</div>
+                            <div class="mc-param-label">Temperatura</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mc-param-card">
+                            <div class="mc-param-icon">⏱️</div>
+                            <div class="mc-param-value" id="val-time">15s</div>
+                            <div class="mc-param-label">Tiempo</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mc-param-card">
+                            <div class="mc-param-icon">💪</div>
+                            <div class="mc-param-value" id="val-press">Media</div>
+                            <div class="mc-param-label">Presión</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-3 rounded" style="background: var(--mc-bg-deep); border: 1px solid var(--mc-glass-border);">
+                    <p class="mb-1 fw-bold text-white">📌 Nota Importante (Pelado): <span id="val-peel" class="text-warning fw-normal">Frío</span></p>
+                    <p id="val-notes" class="mb-0 text-muted" style="font-size: 0.9rem;">Recuerda siempre re-prensar 5 segundos con papel teflón después de pelar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mc-footer mt-5"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <script src="../assets/js/tabla-temp.js"></script>
+
+        <script>
+        // Trigger reveal animations on load for tool pages
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.querySelectorAll('.mc-reveal').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+    </script>
+    <script src="../assets/js/migobot.js"></script>
+
+</body>
+</html>

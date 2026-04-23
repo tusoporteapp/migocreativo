@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es-419">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Academia Gratuita de Estampado | Migo Creativo</title>
+    <meta name="description" content="Aprende gratis desde cero hasta nivel avanzado todo sobre Serigrafía, DTF y Sublimación con Migo Creativo.">
+    <link rel="canonical" href="https://migocreativo.com/academia/">
+    <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>
+        .mc-filter-btn { background: transparent; border: 1px solid var(--mc-glass-border); color: var(--mc-text-muted); border-radius: 100px; padding: 6px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all var(--mc-transition-fast); }
+        .mc-filter-btn:hover { border-color: var(--mc-orange); color: var(--mc-orange); }
+        .mc-filter-btn.active { background: var(--mc-orange); border-color: var(--mc-orange); color: #fff; }
+        .mc-progress-bar-container { width: 100%; height: 8px; background: var(--mc-bg-surface); border-radius: 4px; overflow: hidden; margin-top: 10px; }
+        .mc-progress-bar-fill { height: 100%; background: var(--mc-gradient); width: 0%; transition: width 0.5s ease; }
+        .mc-completed-check { position: absolute; top: 10px; right: 10px; background: #22c55e; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+        .is-completed .mc-completed-check { display: flex; }
+        .is-completed { border-color: #22c55e !important; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
+                <span>MIGOCREATIVO</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Academia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glosario.html">Glosario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header style="padding-top:120px; padding-bottom: 60px; background: var(--mc-bg-deep); border-bottom: 1px solid var(--mc-glass-border);">
+        <div class="container text-center">
+            <span class="mc-badge mb-3">🎓 Conocimiento Compartido</span>
+            <h1 class="mc-section-title">Academia <span class="mc-gradient-text">Migo Creativo</span></h1>
+            <p class="mc-section-subtitle ms-auto me-auto">El plan de estudios completo para convertirte en un profesional del estampado textil. Desde conceptos básicos hasta técnicas avanzadas.</p>
+            
+            <div class="mt-4 p-4 rounded text-start mx-auto" style="max-width: 600px; background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border);">
+                <div class="d-flex justify-content-between align-items-end mb-2">
+                    <span class="fw-bold">Tu Progreso de Aprendizaje</span>
+                    <span id="progress-text" class="fw-bold" style="color: var(--mc-orange);">0/8 Lecciones</span>
+                </div>
+                <div class="mc-progress-bar-container">
+                    <div class="mc-progress-bar-fill" id="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5" style="background: var(--mc-bg-surface);">
+        <div class="container py-4">
+            <div class="d-flex flex-wrap gap-2 justify-content-center mb-5 mc-reveal">
+                <button class="mc-filter-btn active" data-filter="all">Todas las Lecciones</button>
+                <button class="mc-filter-btn" data-filter="basico">🟢 Nivel Básico</button>
+                <button class="mc-filter-btn" data-filter="intermedio">🟡 Nivel Intermedio</button>
+                <button class="mc-filter-btn" data-filter="avanzado">🔴 Nivel Avanzado</button>
+            </div>
+
+            <div class="row g-4" id="lessons-grid">
+                <!-- BÁSICO -->
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="basico">
+                    <a href="que-es-estampado-textil.html" class="text-decoration-none" data-lesson-id="1">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-basico">🟢 Básico</span><span class="mc-lesson-num">Lección 1</span></div>
+                            <h3>¿Qué es el estampado textil?</h3>
+                            <p>Serigrafía, Sublimación y DTF explicados para principiantes. Ventajas y desventajas.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="basico">
+                    <a href="resolucion-para-estampado.html" class="text-decoration-none" data-lesson-id="2">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-basico">🟢 Básico</span><span class="mc-lesson-num">Lección 2</span></div>
+                            <h3>Resolución: ¿cuántos DPI necesitas?</h3>
+                            <p>Tabla de tamaños, cómo verificar tu imagen y errores comunes.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="basico">
+                    <a href="formatos-de-archivo.html" class="text-decoration-none" data-lesson-id="3">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-basico">🟢 Básico</span><span class="mc-lesson-num">Lección 3</span></div>
+                            <h3>Formatos de archivo: ¿cuál usar?</h3>
+                            <p>PNG vs JPG vs Vector. Qué formato para cada técnica de estampado.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="basico">
+                    <a href="preparar-archivo-dtf.html" class="text-decoration-none" data-lesson-id="4">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-basico">🟢 Básico</span><span class="mc-lesson-num">Lección 4</span></div>
+                            <h3>Preparar archivo para DTF</h3>
+                            <p>Checklist completo, configuración del RIP y errores que debes evitar.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- INTERMEDIO -->
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="intermedio">
+                    <a href="separacion-colores-proceso-simulado.html" class="text-decoration-none" data-lesson-id="5">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-intermedio">🟡 Intermedio</span><span class="mc-lesson-num">Lección 5</span></div>
+                            <h3>Separación de colores: Proceso Simulado</h3>
+                            <p>Técnica avanzada de serigrafía para imprimir fotos en telas oscuras.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="intermedio">
+                    <a href="perfiles-icc-color-perfecto.html" class="text-decoration-none" data-lesson-id="6">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-intermedio">🟡 Intermedio</span><span class="mc-lesson-num">Lección 6</span></div>
+                            <h3>Perfiles ICC: Color Perfecto</h3>
+                            <p>Aprende a calibrar tu impresora para que los colores salgan exactos.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- AVANZADO -->
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="avanzado">
+                    <a href="calibracion-prensas-calor.html" class="text-decoration-none" data-lesson-id="7">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-avanzado">🔴 Avanzado</span><span class="mc-lesson-num">Lección 7</span></div>
+                            <h3>Calibración de Prensas de Calor</h3>
+                            <p>Domina el tiempo, temperatura y presión para estampados profesionales.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mc-reveal lesson-item" data-level="avanzado">
+                    <a href="como-cotizar-servicios-estampado.html" class="text-decoration-none" data-lesson-id="8">
+                        <div class="mc-lesson-card">
+                            <div class="mc-completed-check">✓</div>
+                            <div class="d-flex gap-2 align-items-center"><span class="mc-level-badge mc-level-avanzado">🔴 Avanzado</span><span class="mc-lesson-num">Lección 8</span></div>
+                            <h3>Cómo Cotizar servicios de estampado</h3>
+                            <p>Fórmulas para cobrar lo justo y asegurar la rentabilidad de tu taller.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mc-footer"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/academia-progress.js"></script>
+    <script src="../assets/js/migobot.js"></script>
+</body>
+</html>

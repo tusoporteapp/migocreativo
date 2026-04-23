@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es-419">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Comparador de Técnicas de Estampado | Migo Creativo</title>
+    <meta name="description" content="¿No sabes qué técnica usar? Responde 4 preguntas y te diremos si necesitas Serigrafía, DTF o Sublimación.">
+    <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>
+        .mc-tool-card { background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius); padding: 2.5rem; max-width: 650px; margin: 0 auto; box-shadow: var(--mc-shadow); }
+        .form-select { background-color: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); color: var(--mc-text); padding: 12px 16px; border-radius: var(--mc-radius-sm); cursor: pointer; }
+        .form-select:focus { border-color: var(--mc-orange); box-shadow: 0 0 0 0.25rem rgba(255,122,0,.25); }
+        .mc-result-box { margin-top: 2rem; padding: 2rem; border-radius: var(--mc-radius-sm); display: none; background: var(--mc-gradient-soft); border-left: 4px solid var(--mc-orange); }
+        .mc-winner { font-size: 2.5rem; font-weight: 900; background: var(--mc-gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
+                <span>MIGOCREATIVO</span>
+            </a>
+        </div>
+    </nav>
+
+    <header style="padding-top:120px; padding-bottom: 40px; text-align: center;">
+        <div class="container">
+            <span class="mc-badge mb-3">🛠️ Herramienta Gratuita</span>
+            <h1 class="mc-section-title">¿Qué <span class="mc-gradient-text">técnica</span> usar?</h1>
+            <p class="mc-section-subtitle">Responde estas 4 preguntas y el algoritmo te recomendará la mejor técnica de estampado para tu proyecto.</p>
+        </div>
+    </header>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="mc-tool-card mc-reveal">
+                <form id="comparador-form">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">1. ¿De qué material es la tela?</label>
+                        <select class="form-select" id="q-tela" required>
+                            <option value="">Selecciona...</option>
+                            <option value="algodon">100% Algodón o mezcla mayor a 60% algodón</option>
+                            <option value="poliester">100% Poliéster (Ej: ropa deportiva)</option>
+                            <option value="rigido">Rígidos (Tazas, termos con polímero)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">2. ¿De qué color es el material/prenda?</label>
+                        <select class="form-select" id="q-color" required>
+                            <option value="">Selecciona...</option>
+                            <option value="blanco">Blanco o colores muy claros</option>
+                            <option value="oscuro">Negro o colores oscuros</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">3. ¿Cuántos colores tiene tu diseño?</label>
+                        <select class="form-select" id="q-colores" required>
+                            <option value="">Selecciona...</option>
+                            <option value="pocos">1 a 3 colores planos (Ej: un logo simple)</option>
+                            <option value="muchos">Full color / Fotografía / Degradados</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">4. ¿Cuántas unidades vas a hacer con ESTE MISMO diseño?</label>
+                        <select class="form-select" id="q-cantidad" required>
+                            <option value="">Selecciona...</option>
+                            <option value="pocas">Pocas (1 a 15 unidades)</option>
+                            <option value="muchas">Muchas (más de 30 unidades)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="mc-btn-primary w-100 justify-content-center mt-3">
+                        Obtener Recomendación
+                    </button>
+                </form>
+
+                <div id="result-box" class="mc-result-box">
+                    <p class="mb-1 text-muted text-uppercase fw-bold" style="letter-spacing:0.1em;font-size:0.85rem;">Mejor Opción:</p>
+                    <div id="result-winner" class="mc-winner">Técnica</div>
+                    <p id="result-reason" style="line-height:1.8; color:var(--mc-text-muted); font-size:1.05rem;"></p>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://wa.me/573023579755" class="mc-btn-outline">💬 Necesito el diseño para esta técnica</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mc-footer mt-5"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <script src="../assets/js/comparador.js"></script>
+
+        <script>
+        // Trigger reveal animations on load for tool pages
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.querySelectorAll('.mc-reveal').forEach(el => el.classList.add('visible'));
+            }, 100);
+        });
+    </script>
+    <script src="../assets/js/migobot.js"></script>
+
+</body>
+</html>

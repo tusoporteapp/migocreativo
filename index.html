@@ -102,6 +102,10 @@
         }
     ]
     </script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF7A00">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/jpeg" href="assets/img/LOGO/LOGO NUEVO.jpg">
     <link rel="icon" type="image/jpeg" href="assets/img/LOGO/LOGO NUEVO.jpg" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -122,6 +126,13 @@
   };
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+
+  // Global listener for custom events from conversion.js
+  import { logEvent } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  window.addEventListener('mcAnalytics', (e) => {
+      const { name, params } = e.detail;
+      logEvent(analytics, name, params);
+  });
 </script>
 </head>
 
@@ -141,10 +152,11 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#herramientas">Herramientas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#academia">Academia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                </ul>
+                                    </ul>
                 <a class="mc-btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/573023579755" target="_blank">
                     💬 WhatsApp
                 </a>
@@ -154,13 +166,14 @@
 
     <!-- Hero Section -->
     <section class="mc-hero" id="hero">
+        <canvas id="mc-particles"></canvas>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 mc-hero-content">
                     <span class="mc-badge mb-3">🎨 Diseñador de Estampado Textil en Bogotá</span>
                     <h1 class="mc-hero-title">
                         Diseño y optimización para<br>
-                        <span class="mc-gradient-text">serigrafía, DTF y sublimación.</span>
+                        <span id="mc-typewriter" class="mc-gradient-text">serigrafía</span>
                     </h1>
                     <p class="mc-hero-subtitle">
                         Soy <strong>Miguel Heredia</strong>, diseñador de estampado textil en <strong>Bogotá, Colombia</strong>. En Migo Creativo preparo tus imágenes con calidad profesional para <strong>serigrafía, DTF y sublimación</strong>. Separación de colores, vectorización y archivos listos para producción.
@@ -209,6 +222,141 @@
                         <div class="mc-service-icon">✨</div>
                         <h3>Diseño para Sublimación</h3>
                         <p>Conversión a CMYK, perfiles ICC calibrados y optimización de colores para sublimación en telas y productos rígidos. Colores vibrantes garantizados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-5" id="herramientas" style="background: var(--mc-bg-deep);">
+        <div class="container py-5">
+            <div class="text-center mc-reveal">
+                <span class="mc-badge mb-3">🛠️ Herramientas Gratuitas</span>
+                <h2 class="mc-section-title">Acelera tu <span class="mc-gradient-text">Productividad</span></h2>
+                <p class="mc-section-subtitle">Úsalas todos los días en tu taller para asegurar calidad y rentabilidad.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 mc-reveal">
+                    <a href="herramientas/calculadora-dpi.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; padding: 2rem;">
+                            <div class="mc-service-icon" style="width: 50px; height: 50px; font-size: 1.5rem; margin: 0 0 1rem 0;">📏</div>
+                            <h3 style="font-size: 1.1rem;">Calculadora de DPI</h3>
+                            <p style="font-size: 0.9rem;">Verifica si tu imagen tiene la resolución necesaria para imprimir.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mc-reveal mc-reveal-delay-1">
+                    <a href="herramientas/comparador-tecnicas.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; padding: 2rem;">
+                            <div class="mc-service-icon" style="width: 50px; height: 50px; font-size: 1.5rem; margin: 0 0 1rem 0;">🤔</div>
+                            <h3 style="font-size: 1.1rem;">Comparador de Técnicas</h3>
+                            <p style="font-size: 0.9rem;">El algoritmo te dice si usar Serigrafía, DTF o Sublimación.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mc-reveal mc-reveal-delay-2">
+                    <a href="herramientas/tabla-temperaturas.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; padding: 2rem;">
+                            <div class="mc-service-icon" style="width: 50px; height: 50px; font-size: 1.5rem; margin: 0 0 1rem 0;">🌡️</div>
+                            <h3 style="font-size: 1.1rem;">Tabla de Temperaturas</h3>
+                            <p style="font-size: 0.9rem;">Parámetros exactos de tiempo y presión para cada material.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3 mc-reveal mc-reveal-delay-3">
+                    <a href="herramientas/calculadora-costos.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; padding: 2rem;">
+                            <div class="mc-service-icon" style="width: 50px; height: 50px; font-size: 1.5rem; margin: 0 0 1rem 0;">💰</div>
+                            <h3 style="font-size: 1.1rem;">Calculadora de Costos</h3>
+                            <p style="font-size: 0.9rem;">No regales tu trabajo. Calcula exactamente cuánto cobrar.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="py-5" id="antes-despues" style="background: var(--mc-bg-surface);">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 mc-reveal">
+                    <span class="mc-badge mb-3">✨ Transformación Real</span>
+                    <h2 class="mc-section-title">El poder de la <span class="mc-gradient-text">Optimización</span></h2>
+                    <p class="mc-section-subtitle ms-0" style="text-align: left;">
+                        No más bordes blancos, colores apagados o pixelado. Así transformamos una imagen bajada de internet en un archivo profesional listo para DTF o Serigrafía.
+                    </p>
+                    <ul class="list-unstyled mb-4" style="color: var(--mc-text-muted);">
+                        <li class="mb-2">✅ Resolución escalada a 300 DPI</li>
+                        <li class="mb-2">✅ Colores calibrados con perfil ICC</li>
+                        <li class="mb-2">✅ Halftones (tramas) aplicados</li>
+                        <li class="mb-2">✅ Base blanca perfecta</li>
+                    </ul>
+                    <a href="https://wa.me/573023579755" class="mc-btn-primary">💬 Optimizar mi imagen</a>
+                </div>
+                <div class="col-lg-7 mc-reveal mc-reveal-delay-1">
+                    <div class="mc-ba-container" id="mc-ba-slider">
+                        <!-- After Image (Background) -->
+                        <img src="assets/img/LOGO/LOGO NUEVO.jpg" alt="Después - Optimizado" class="mc-ba-img mc-ba-after">
+                        <!-- Before Image (Foreground, clipped) -->
+                        <div class="mc-ba-clip">
+                            <img src="assets/img/LOGO/LOGO NUEVO.jpg" alt="Antes - Original" class="mc-ba-img mc-ba-before" style="filter: blur(2px) grayscale(50%);">
+                        </div>
+                        <!-- Slider handle -->
+                        <div class="mc-ba-handle">
+                            <div class="mc-ba-arrow mc-ba-left"></div>
+                            <div class="mc-ba-arrow mc-ba-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="testimonios" style="background: var(--mc-bg-deep);">
+        <div class="container py-5">
+            <div class="text-center mc-reveal">
+                <span class="mc-badge mb-3">⭐ Casos de Éxito</span>
+                <h2 class="mc-section-title">Talleres que confían en <span class="mc-gradient-text">Migo</span></h2>
+                <p class="mc-section-subtitle">Lo que dicen los impresores y marcas de Colombia sobre nuestros archivos.</p>
+            </div>
+            
+            <div class="mc-testimonials-carousel mc-reveal mc-reveal-delay-1">
+                <div class="mc-testimonial-track" id="mc-testimonial-track">
+                    <div class="mc-testimonial-card">
+                        <div class="mc-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="mc-quote">"Antes perdíamos mucha plata porque el DTF nos quedaba con un borde blanco horroroso. Desde que Miguel nos prepara los archivos, el acabado es premium. Cero problemas en la plancha."</p>
+                        <div class="mc-client">
+                            <div class="mc-client-avatar">JP</div>
+                            <div>
+                                <h4 class="mb-0">Juan Pablo G.</h4>
+                                <span class="text-muted text-sm">Taller de DTF • Bogotá</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mc-testimonial-card">
+                        <div class="mc-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="mc-quote">"Le envié un logo pixelado que me mandó un cliente por WhatsApp. No sé cómo hizo pero lo vectorizó perfecto y la separación de colores para serigrafía encajó a la primera."</p>
+                        <div class="mc-client">
+                            <div class="mc-client-avatar" style="background: var(--mc-purple);">AM</div>
+                            <div>
+                                <h4 class="mb-0">Andrés M.</h4>
+                                <span class="text-muted text-sm">Serigrafista • Medellín</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mc-testimonial-card">
+                        <div class="mc-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="mc-quote">"La academia me abrió los ojos. Empecé a cobrar el diseño aparte como dice Miguel y nadie se ha quejado. Sus archivos de sublimación tienen unos colores que no conseguía antes."</p>
+                        <div class="mc-client">
+                            <div class="mc-client-avatar" style="background: #22c55e;">CR</div>
+                            <div>
+                                <h4 class="mb-0">Carolina R.</h4>
+                                <span class="text-muted text-sm">Sublimación • Cali</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -427,15 +575,15 @@
                     </p>
                     <div class="mc-about-stats">
                         <div class="mc-stat">
-                            <span class="mc-stat-number">500+</span>
+                            <span class="mc-stat-number" data-mc-count="500" data-mc-suffix="+">0+</span>
                             <span class="mc-stat-label">Imágenes Optimizadas</span>
                         </div>
                         <div class="mc-stat">
-                            <span class="mc-stat-number">100+</span>
+                            <span class="mc-stat-number" data-mc-count="100" data-mc-suffix="+">0+</span>
                             <span class="mc-stat-label">Clientes Satisfechos</span>
                         </div>
                         <div class="mc-stat">
-                            <span class="mc-stat-number">3</span>
+                            <span class="mc-stat-number" data-mc-count="3">0</span>
                             <span class="mc-stat-label">Técnicas Dominadas</span>
                         </div>
                     </div>
@@ -530,6 +678,19 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.mc-reveal').forEach(el => observer.observe(el));
     </script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/counter.js"></script>
+        <script src="assets/js/before-after.js"></script>
+    <script src="assets/js/testimonios.js"></script>
+    <script src="assets/js/conversion.js"></script>
     <script src="assets/js/migobot.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
 </body>
 </html>
