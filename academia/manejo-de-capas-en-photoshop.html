@@ -15,10 +15,10 @@
         .mc-post-tag { padding: 4px 14px; background: var(--mc-gradient-soft); border: 1px solid var(--mc-glass-border); border-radius: 100px; font-size: 0.75rem; font-weight: 600; color: var(--mc-orange-light); text-transform: uppercase; }
         .mc-post-body { max-width: 780px; margin: 0 auto; }
         .mc-post-body h2 { font-size: 1.75rem; margin-top: 3rem; margin-bottom: 1rem; border-bottom: 2px solid var(--mc-glass-border); padding-bottom: 0.5rem; }
-        .mc-post-body h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--mc-orange-light); }
-        .mc-post-body p { color: var(--mc-text-muted); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.25rem; }
-        .mc-post-body ul { color: var(--mc-text-muted); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.5rem; }
-        .mc-highlight-box { background: var(--mc-gradient-soft); border-left: 4px solid var(--mc-orange); padding: 1.5rem; margin: 2rem 0; border-radius: var(--mc-radius-sm); }
+        .mc-post-body h3 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--mc-orange-light); font-weight: 700; }
+        .mc-post-body p { color: var(--mc-text-muted); font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.25rem; }
+        .mc-post-body ul { color: var(--mc-text-muted); font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.5rem; }
+        .mc-highlight-box { background: rgba(255, 122, 0, 0.05); border-left: 4px solid var(--mc-orange); padding: 1.5rem; margin: 2.5rem 0; border-radius: var(--mc-radius-sm); border-top: 1px solid var(--mc-glass-border); border-right: 1px solid var(--mc-glass-border); border-bottom: 1px solid var(--mc-glass-border); }
         .mc-post-author-box { background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius); padding: 2rem; display: flex; align-items: center; gap: 1.5rem; margin-top: 3rem; }
         .mc-post-author-box img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--mc-orange); object-fit: cover; }
     </style>
@@ -55,30 +55,14 @@
         <div class="container">
             <div class="mc-post-body mc-reveal">
                 
-        <p>En el mundo del estampado textil, dominar las técnicas adecuadas puede significar la diferencia entre un trabajo amateur y un resultado profesional de alta gama. El tema de <strong>Manejo de capas en Photoshop</strong> es crítico para asegurar que cada prenda o sustrato cumpla con las más altas exigencias de calidad del mercado.</p>
-        
-        <h3>1. Entendiendo los fundamentos</h3>
-        <p>Para abordar correctamente este desafío, primero debemos entender cómo interactúan los materiales. Tanto si trabajas con serigrafía tradicional, como si te has actualizado al DTF o la sublimación, los principios de la física de tintas y transferencia de calor aplican. Ajustar la presión, el tiempo de curado y la temperatura de forma precisa evita que los polímeros sufran una degradación térmica prematura, un error muy común en talleres inexpertos.</p>
-
-        <div class="mc-highlight-box">
-            <p><strong>🔥 Consejo de experto:</strong> Nunca confíes ciegamente en los valores predeterminados de fábrica. Realiza siempre pruebas de lavado con muestras reales, ya que la humedad relativa de tu taller altera drásticamente los tiempos de secado y curado.</p>
-        </div>
-
-        <h3>2. Mejores Prácticas y Técnicas</h3>
-        <p>A lo largo de mis años de experiencia en Migo Creativo, he comprobado que estandarizar tu flujo de trabajo reduce las mermas hasta en un 40%. A continuación, las claves esenciales:</p>
-        <ul>
-            <li><strong>Control Ambiental:</strong> Mantén tu área de trabajo libre de polvo y con humedad controlada (ideal entre 40% y 60%).</li>
-            <li><strong>Calibración Periódica:</strong> Utiliza termómetros láser o pirómetros para verificar que tu plancha térmica entregue calor uniforme en toda la platina.</li>
-            <li><strong>Preparación de Archivos:</strong> Verifica siempre que los diseños estén en el espacio de color adecuado (CMYK para impresión, RGB para monitoreo) y en la resolución de 300 DPI.</li>
-            <li><strong>Mantenimiento Preventivo:</strong> Limpia rieles, cabezales y mallas después de cada jornada intensiva de producción.</li>
-        </ul>
-
-        <h3>3. Solución a problemas comunes</h3>
-        <p>Es muy probable que en algún momento te enfrentes a migraciones de color o pérdida de adherencia. Esto suele suceder cuando la tela de poliéster supera su punto de gasificación (aprox. 160°C). Para evitar que los tintes originales de la prenda manchen tu estampado (especialmente con plastisol blanco o tinta DTF), debes utilizar bases bloqueadoras de migración o reducir agresivamente la temperatura de planchado aumentando ligeramente el tiempo.</p>
-
-        <h3>Conclusión</h3>
-        <p>Implementar las técnicas correctas para <strong>Manejo de capas en Photoshop</strong> te permitirá elevar la calidad de tus entregas y fidelizar a clientes exigentes. Recuerda que la inversión en educación y optimización técnica siempre se recupera con creces mediante la reducción de errores y el aumento de la productividad en tu taller.</p>
-    
+            <p>Photoshop no es un lienzo plano como Microsoft Paint. Trabajar destructivamente arruina diseños complejos. Si un cliente te pide cambiar solo el color del texto después de 2 horas de trabajo y no tienes capas, tendrás que empezar de cero.</p>
+            <h3>El concepto de la pila de cristales</h3>
+            <p>Imagina cada Capa (Layer) como una hoja de acetato transparente. Lo que pongas en la capa superior tapará lo de abajo. Debes aislar TODOS tus elementos: El fondo va en la capa 1 (y debes apagarle el ojo antes de exportar un PNG para DTF), la ilustración va en la capa 2, y los textos van en la capa 3. Si borras o borroneas en una capa, las otras quedan intactas.</p>
+            <h3>Objetos Inteligentes (Smart Objects)</h3>
+            <p>La regla sagrada del diseño textil en Photoshop: Nunca escales hacia abajo un logo rasterizado para verlo chiquito y luego lo escales de vuelta hacia arriba. Photoshop tirará a la basura los píxeles y quedará borroso. Haz clic derecho en tu capa > Convertir en Objeto Inteligente. Esto "blinda" la información de la imagen dentro de un contenedor, permitiéndote escalar al infinito sin perder calidad de los píxeles originales.</p>
+            <div class="mc-highlight-box">
+                <p><strong>🎓 Tarea de la lección:</strong> Acostúmbrate a nombrar todas tus capas. Cuando el archivo de una ilustración de heavy metal para serigrafía simulada alcance las 50 capas y canales, saber dónde está la capa llamada "Sombras del Craneo" te salvará la vida.</p>
+            </div>
                 
                 <div class="mc-post-author-box">
                     <img src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Miguel Heredia">
@@ -89,7 +73,7 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="index.html" class="mc-btn-primary">← Volver al Academia</a>
+                <a href="index.html" class="mc-btn-primary">← Volver a la Academia</a>
             </div>
         </div>
     </section>
