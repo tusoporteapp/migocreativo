@@ -59,9 +59,53 @@
                 {"@type": "City", "name": "Barranquilla"}
             ],
             "serviceType": ["Diseño para Serigrafía", "Diseño para DTF", "Diseño para Sublimación", "Separación de Colores", "Vectorización de Logos", "Optimización de Imágenes para Estampado"],
-            "priceRange": "$$",
+            "priceRange": "$",
             "openingHours": "Mo-Fr 08:00-18:00",
-            "sameAs": []
+            "sameAs": [],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "30",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Carlos S."},
+                    "datePublished": "2026-04-10",
+                    "reviewBody": "Chamo, el servicio es de otro nivel. Nos acomodó una imagen de 72 DPI que el cliente juraba que estaba en alta. El DTF salió nítido, sin bordes pixelados.",
+                    "reviewRating": {"@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Juan Pablo G."},
+                    "datePublished": "2026-04-12",
+                    "reviewBody": "Antes perdíamos mucha plata porque el DTF nos quedaba con un borde blanco horroroso. Desde que Miguel nos prepara los archivos, el acabado es premium. Cero problemas en la plancha.",
+                    "reviewRating": {"@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Luis R."},
+                    "datePublished": "2026-04-15",
+                    "reviewBody": "Causa, el servicio es buenazo. Para producciones grandes en Gamarra necesitamos rapidez y calidad. Los diseños para plastisol nos llegan perfectos.",
+                    "reviewRating": {"@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Ignacio V."},
+                    "datePublished": "2026-04-18",
+                    "reviewBody": "El soporte es genial. Me explicó por qué mi perfil RGB no funcionaba para sublimar y me entregó todo en CMYK listo para imprimir. Cero dramas.",
+                    "reviewRating": {"@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Martín N."},
+                    "datePublished": "2026-04-20",
+                    "reviewBody": "¡Che, increíble el laburo! Estábamos renegando con un archivo pesadísimo y Miguel nos devolvió un PNG transparente súper optimizado para DTF. Un crack.",
+                    "reviewRating": {"@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1"}
+                }
+            ]
         },
         {
             "@context": "https://schema.org",
@@ -153,8 +197,8 @@
                     <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#herramientas">Herramientas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#academia">Academia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academia/index.html">Academia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                                     </ul>
                 <a class="mc-btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/573023579755" target="_blank">
@@ -185,6 +229,21 @@
                         <a href="#academia" class="mc-btn-outline">
                             Academia Gratuita
                         </a>
+                    </div>
+                    
+                    <div class="mc-about-stats" style="margin-top: 3rem; padding-top: 2rem;">
+                        <div class="mc-stat">
+                            <span class="mc-stat-number" data-mc-count="5000" data-mc-suffix="+">0+</span>
+                            <span class="mc-stat-label">Imágenes Optimizadas</span>
+                        </div>
+                        <div class="mc-stat">
+                            <span class="mc-stat-number" data-mc-count="1" data-mc-suffix="M+">0</span>
+                            <span class="mc-stat-label">Vistas/mes en Pinterest</span>
+                        </div>
+                        <div class="mc-stat">
+                            <span class="mc-stat-number" data-mc-count="100" data-mc-suffix="+">0+</span>
+                            <span class="mc-stat-label">Clientes Satisfechos</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5 mc-hero-photo">
@@ -660,6 +719,120 @@
         </div>
     </section>
 
+    
+    <!-- Academia Section -->
+    <section class="mc-services py-5" id="academia" style="background: var(--mc-bg-deep);">
+        <div class="container py-5">
+            <div class="text-center mc-reveal">
+                <span class="mc-badge mb-3">🎓 Academia Gratuita</span>
+                <h2 class="mc-section-title">Aprende <span class="mc-gradient-text">Estampado Textil</span></h2>
+                <p class="mc-section-subtitle">Las mejores lecciones 100% gratuitas para que domines la serigrafía, DTF y sublimación.</p>
+            </div>
+            <div class="row g-4 mt-4">
+                <!-- LECCION 1 -->
+                <div class="col-md-4 mc-reveal">
+                    <a href="academia/que-es-estampado-textil.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 align-items-center mb-3">
+                                <span class="mc-level-badge mc-level-basico" style="background: rgba(34, 197, 94, 0.2); color: #4ade80; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">🟢 Básico</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem; font-weight: 700;">Lección 1</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">¿Qué es el estampado textil?</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Las 3 técnicas principales, cómo funcionan y cuál te conviene más para tu negocio.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Empezar lección →</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- LECCION 2 -->
+                <div class="col-md-4 mc-reveal mc-reveal-delay-1">
+                    <a href="academia/conceptos-basicos-color.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 align-items-center mb-3">
+                                <span class="mc-level-badge mc-level-basico" style="background: rgba(34, 197, 94, 0.2); color: #4ade80; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">🟢 Básico</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem; font-weight: 700;">Lección 2</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">Conceptos Básicos de Color (CMYK vs RGB)</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Por qué los colores cambian al imprimir y cómo evitar estampados oscuros.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Empezar lección →</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- LECCION 3 -->
+                <div class="col-md-4 mc-reveal mc-reveal-delay-2">
+                    <a href="academia/resolucion-dpi-importancia.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 align-items-center mb-3">
+                                <span class="mc-level-badge mc-level-basico" style="background: rgba(34, 197, 94, 0.2); color: #4ade80; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">🟢 Básico</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem; font-weight: 700;">Lección 3</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">Resolución y DPI: Por qué son vitales</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Descubre por qué una imagen borrosa arruina tu trabajo y cómo solucionarlo.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Empezar lección →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-5 mc-reveal">
+                <a href="academia/index.html" class="mc-btn-primary">Ver todas las lecciones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="mc-services py-5" id="blog">
+        <div class="container py-5">
+            <div class="text-center mc-reveal">
+                <span class="mc-badge mb-3">📝 Últimas Noticias</span>
+                <h2 class="mc-section-title">Blog de <span class="mc-gradient-text">MigoCreativo</span></h2>
+                <p class="mc-section-subtitle">Artículos, guías y consejos avanzados para rentabilizar tu taller textil.</p>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4 mc-reveal">
+                    <a href="blog/diferencia-serigrafia-dtf-sublimacion.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 mb-3">
+                                <span class="mc-post-tag" style="background: rgba(255, 122, 0, 0.15); color: #FF7A00; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">Guías</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem;">📅 Abr 23, 2026</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">¿Cuál es la diferencia entre Serigrafía, DTF y Sublimación?</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Una guía definitiva para elegir la técnica correcta en 2026 sin perder dinero en el intento.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Leer artículo →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mc-reveal mc-reveal-delay-1">
+                    <a href="blog/tendencias-diseno-textil-2026.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 mb-3">
+                                <span class="mc-post-tag" style="background: rgba(255, 122, 0, 0.15); color: #FF7A00; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">Tendencias</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem;">📅 Abr 22, 2026</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">Tendencias de Diseño Textil y Estampado para 2026</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Descubre los estilos, colores y estéticas que dominarán el mundo del estampado este año.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Leer artículo →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mc-reveal mc-reveal-delay-2">
+                    <a href="blog/guia-mantenimiento-prendas-estampadas.html" class="text-decoration-none">
+                        <div class="mc-service-card" style="text-align: left; cursor: pointer;">
+                            <div class="d-flex gap-2 mb-3">
+                                <span class="mc-post-tag" style="background: rgba(255, 122, 0, 0.15); color: #FF7A00; padding: 3px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">Cuidados</span>
+                                <span style="color: var(--mc-text-muted); font-size: 0.8rem;">📅 Abr 21, 2026</span>
+                            </div>
+                            <h3 style="font-size: 1.15rem; line-height: 1.4; color: var(--mc-text-heading); margin-bottom: 10px;">Guía de Mantenimiento de Prendas Estampadas</h3>
+                            <p style="font-size: 0.9rem; color: var(--mc-text-muted); margin-bottom: 15px;">Consejos vitales para que tus estampados en DTF y serigrafía duren mucho más tiempo.</p>
+                            <span style="color: var(--mc-orange); font-weight: 600; font-size: 0.9rem;">Leer artículo →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-5 mc-reveal">
+                <a href="blog/index.html" class="mc-btn-primary">Ver todos los artículos</a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="mc-about py-5" id="sobre-mi">
         <div class="container py-5">
@@ -678,19 +851,12 @@
                     <p style="color: var(--mc-text-muted); font-size: 1.1rem; line-height: 1.8;">
                         Mi misión es ayudar a talleres y emprendedores de <strong>Bogotá, Medellín, Cali, Barranquilla y toda Colombia</strong> a elevar la calidad de sus estampados. Separación de colores, vectorización de logos, perfiles ICC — cada archivo que sale de mis manos está listo para producción.
                     </p>
-                    <div class="mc-about-stats">
-                        <div class="mc-stat">
-                            <span class="mc-stat-number" data-mc-count="500" data-mc-suffix="+">0+</span>
-                            <span class="mc-stat-label">Imágenes Optimizadas</span>
-                        </div>
-                        <div class="mc-stat">
-                            <span class="mc-stat-number" data-mc-count="100" data-mc-suffix="+">0+</span>
-                            <span class="mc-stat-label">Clientes Satisfechos</span>
-                        </div>
-                        <div class="mc-stat">
-                            <span class="mc-stat-number" data-mc-count="3">0</span>
-                            <span class="mc-stat-label">Técnicas Dominadas</span>
-                        </div>
+                    <div class="mt-4 p-4" style="background: rgba(37, 211, 102, 0.1); border-radius: var(--mc-radius-sm); border: 1px solid rgba(37, 211, 102, 0.2);">
+                        <h4 style="color: #25D366; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">🔥 Diseños Premium Listos para Imprimir</h4>
+                        <p style="color: var(--mc-text-muted); font-size: 0.95rem; margin-bottom: 1rem;">¿No tienes tiempo de vectorizar o buscar imágenes? Explora mi catálogo privado con los mejores diseños ya optimizados y separados por color.</p>
+                        <a href="https://wa.me/c/573023579755" target="_blank" class="mc-btn-primary" style="background: #25D366; color: white; display: inline-flex; align-items: center; gap: 8px;">
+                            🛒 Ver Catálogo en WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>

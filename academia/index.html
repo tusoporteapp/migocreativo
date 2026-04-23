@@ -165,5 +165,17 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/js/academia-progress.js"></script>
     <script src="../assets/js/migobot.js"></script>
+
+    <script>
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.mc-reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
