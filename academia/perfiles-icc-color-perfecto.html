@@ -1,37 +1,135 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark" lang="es-419">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Perfiles ICC: Color Perfecto | Academia Migo Creativo</title>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Perfiles ICC: Cómo Lograr el Color Perfecto en DTF y Sublimación | Academia Migo Creativo</title>
+    <link rel="canonical" href="https://migocreativo.com/academia/perfiles-icc-color-perfecto.html">
+    <meta name="description" content="Guía completa sobre perfiles ICC para estampado textil. Qué son, por qué los necesitas y cómo calibrar tu impresora DTF o de sublimación para obtener colores exactos.">
+    <meta property="og:type" content="article"><meta property="og:title" content="Perfiles ICC: Color Perfecto | Academia Migo Creativo">
+    <meta name="author" content="Miguel Heredia">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Perfiles ICC: Cómo Lograr el Color Perfecto","author":{"@type":"Person","name":"Miguel Heredia"},"publisher":{"@type":"Organization","name":"Migo Creativo"},"datePublished":"2026-04-23"}</script>
     <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <style>.mc-post-body{max-width:780px;margin:0 auto}.mc-post-body h2{font-size:1.75rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--mc-glass-border)}.mc-post-body h3{font-size:1.3rem;margin-top:2rem;margin-bottom:.75rem;color:var(--mc-orange-light)}.mc-post-body p{color:var(--mc-text-muted);font-size:1.05rem;line-height:1.85;margin-bottom:1.25rem}.mc-post-body strong{color:var(--mc-text)}.mc-post-body ul,.mc-post-body ol{color:var(--mc-text-muted);font-size:1.05rem;line-height:1.85;padding-left:1.5rem;margin-bottom:1.5rem}.mc-post-body li{margin-bottom:.5rem}.mc-highlight-box{background:var(--mc-gradient-soft);border:1px solid var(--mc-glass-border);border-left:4px solid var(--mc-orange);border-radius:var(--mc-radius-sm);padding:1.5rem 2rem;margin:2rem 0}.mc-highlight-box p{margin-bottom:0}.mc-post-author-box{background:var(--mc-bg-card);border:1px solid var(--mc-glass-border);border-radius:var(--mc-radius);padding:2rem;display:flex;align-items:center;gap:1.5rem;margin-top:3rem}.mc-post-author-box img{width:80px;height:80px;border-radius:50%;border:3px solid var(--mc-orange);object-fit:cover;flex-shrink:0}.mc-post-author-box h4{margin-bottom:.25rem}.mc-post-author-box p{color:var(--mc-text-muted);font-size:.9rem;margin-bottom:0}@media(max-width:575.98px){.mc-post-author-box{flex-direction:column;text-align:center}}</style>
+<script type="module">import{initializeApp}from"https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";import{getAnalytics}from"https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";const app=initializeApp({apiKey:"AIzaSyBwccZeqikEXWmsE5oBEueZYDX1HRkljMY",authDomain:"migocreativo-com.firebaseapp.com",projectId:"migocreativo-com",storageBucket:"migocreativo-com.firebasestorage.app",messagingSenderId:"504387667122",appId:"1:504387667122:web:7446e5862b67d3d60ef5ab",measurementId:"G-FBX628JT6Y"});getAnalytics(app);</script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-dark scrolled" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo">
-                <span>MIGOCREATIVO</span>
-            </a>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav"><div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><img class="rounded-circle" width="40" height="40" src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo Logo"><span>MIGOCREATIVO</span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navcol-1"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="../index.html#hero">Inicio</a></li><li class="nav-item"><a class="nav-link" href="../index.html#servicios">Servicios</a></li><li class="nav-item"><a class="nav-link active" href="../index.html#academia">Academia</a></li><li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li></ul></div></div></nav>
+
+    <header style="padding-top:120px;"><div class="container"><div class="mc-post-body">
+        <a href="../index.html#academia" class="mc-btn-outline mb-4" style="padding:8px 20px;font-size:.9rem;">← Volver a la Academia</a>
+        <div class="d-flex gap-2 mb-3"><span class="mc-level-badge mc-level-intermedio">🟡 Intermedio</span><span class="mc-lesson-num">Lección 6</span></div>
+        <h1 class="mc-section-title" style="font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;">Perfiles ICC: cómo lograr el <span class="mc-gradient-text">color perfecto</span></h1>
+        <div style="color:var(--mc-text-muted);font-size:.9rem;margin-top:.75rem;">✍️ Miguel Heredia · ⏱️ 10 min de lectura</div>
+    </div></div></header>
+
+    <article class="py-4"><div class="container"><div class="mc-post-body">
+
+        <p>¿Tus impresiones salen demasiado rojas? ¿Los azules se ven morados? ¿Los tonos piel parecen quemados? <strong>El culpable en el 95% de los casos es la falta de un perfil ICC adecuado.</strong> Este es uno de los temas más ignorados en el estampado textil, y es precisamente lo que separa a un principiante de un profesional.</p>
+
+        <h2>📖 ¿Qué es un perfil ICC?</h2>
+
+        <p>Un perfil ICC (International Color Consortium) es un <strong>archivo que actúa como traductor entre tu monitor, tu software y tu impresora</strong>. Le dice a cada dispositivo cómo interpretar los colores para que todos "hablen el mismo idioma".</p>
+
+        <p>Piénsalo así: el color "rojo" para tu monitor puede significar algo diferente que "rojo" para tu impresora. El perfil ICC es la tabla de traducción que garantiza que ambos estén de acuerdo en qué es exactamente "rojo".</p>
+
+        <div class="mc-highlight-box">
+            <p><strong>💡 Analogía simple:</strong> Imagina que le pides a alguien que te traiga una tela "azul". Sin un estándar (el perfil ICC), te podría traer azul cielo, azul marino, azul turquesa... Con el perfil, los dos saben exactamente qué tono de azul es.</p>
         </div>
-    </nav>
-    <div class="container" style="margin-top: 120px;">
-        <article class="mc-post-body" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-            <header class="mb-5">
-                <div class="d-flex gap-2 mb-3"><span class="mc-level-badge mc-level-intermedio">🟡 Intermedio</span><span class="mc-lesson-num">Lección 6</span></div>
-                <h1 class="mc-section-title">Perfiles ICC: <span class="mc-gradient-text">Color Perfecto</span></h1>
-            </header>
-            <div class="mc-post-content" style="color: var(--mc-text-muted); line-height: 1.8; font-size: 1.1rem;">
-                <p>¿Tus impresiones salen muy rojas o muy oscuras? El culpable es casi siempre la falta de un perfil ICC adecuado.</p>
-                <h2 style="color: var(--mc-text-heading); margin-top: 40px;">¿Qué es un perfil ICC?</h2>
-                <p>Es un traductor. Le dice a la impresora cómo interpretar los colores del monitor basándose en el tipo de tinta, el papel y la tela que estás usando.</p>
-                <h2 style="color: var(--mc-text-heading); margin-top: 40px;">Por qué lo necesitas</h2>
-                <p>Sin perfil, estás adivinando. Con un perfil ICC calibrado profesionalmente (como los que configuramos en Migo Creativo), lo que ves en pantalla es exactamente lo que sale en la tela.</p>
-            </div>
-        </article>
-    </div>
+
+        <h2>🧪 ¿Por qué necesitas un perfil ICC?</h2>
+
+        <p>Sin perfil ICC, estás adivinando. Y adivinar con tintas y materiales cuesta dinero. Aquí los problemas más comunes sin perfil:</p>
+
+        <ul>
+            <li><strong>Colores apagados:</strong> Lo que se ve vibrante en pantalla sale opaco en la impresión porque la impresora no sabe cómo reproducir esos tonos.</li>
+            <li><strong>Tonos desviados:</strong> Los rojos se vuelven naranjas, los azules se vuelven morados, los verdes se vuelven amarillentos.</li>
+            <li><strong>Tonos piel irreales:</strong> Uno de los errores más notorios. Los retratos salen con la piel verdosa, rojiza o amarillenta.</li>
+            <li><strong>Inconsistencia entre lotes:</strong> La misma imagen sale diferente cada vez que la imprimes porque las condiciones cambian (temperatura ambiente, humedad, desgaste de cabezales).</li>
+        </ul>
+
+        <h2>🔧 Tipos de perfiles ICC</h2>
+
+        <h3>Perfil de entrada (Input Profile)</h3>
+        <p>Le dice a tu software cómo interpretar los colores de la imagen original. El más común es <strong>sRGB</strong> (para imágenes de internet y cámaras) y <strong>Adobe RGB</strong> (para fotografía profesional). Si tu imagen está en sRGB pero tu software la interpreta como Adobe RGB, los colores ya empezaron mal.</p>
+
+        <h3>Perfil de salida (Output Profile)</h3>
+        <p>Es el más importante para estampado. Le dice a la <strong>impresora</strong> exactamente cómo mezclar sus tintas para reproducir cada color. Este perfil es <strong>único para cada combinación de:</strong></p>
+        <ul>
+            <li>Modelo de impresora</li>
+            <li>Marca y tipo de tinta</li>
+            <li>Tipo de papel/film (en DTF) o papel de sublimación</li>
+            <li>Modo de impresión (velocidad, resolución, número de pasadas)</li>
+        </ul>
+
+        <div class="mc-highlight-box">
+            <p><strong>⚠️ Esto es clave:</strong> Un perfil ICC creado para una Epson L1800 con tinta X y film Y NO sirve para la misma impresora con tinta Z y film W. Cada combinación necesita su propio perfil. Esto es lo que muchos ignoran.</p>
+        </div>
+
+        <h2>📐 Cómo se crea un perfil ICC</h2>
+
+        <p>El proceso profesional implica:</p>
+
+        <ol>
+            <li><strong>Imprimir un chart de color</strong> — una carta con cientos de parches de color específicos (usualmente un IT8.7/4 con 1617 parches)</li>
+            <li><strong>Dejar secar</strong> la carta por 24 horas para que los colores se estabilicen</li>
+            <li><strong>Medir cada parche</strong> con un espectrofotómetro (dispositivo que mide el color exacto de cada parche)</li>
+            <li><strong>Generar el perfil</strong> usando software especializado (i1Profiler, basICColor, etc.) que compara lo que debería ser vs lo que realmente salió</li>
+            <li><strong>Cargar el perfil</strong> en el RIP o en Photoshop para que corrija las desviaciones automáticamente</li>
+        </ol>
+
+        <h3>¿Cuánto cuesta un espectrofotómetro?</h3>
+        <p>Un i1Studio cuesta entre <strong>$1.500.000 y $2.500.000 COP</strong>. Un i1Pro3 profesional cuesta más de <strong>$5.000.000 COP</strong>. Es una inversión significativa que no todos los talleres pueden hacer, especialmente los que están empezando.</p>
+
+        <h2>💡 ¿No tienes espectrofotómetro? Alternativas</h2>
+
+        <ul>
+            <li><strong>Usar el perfil del fabricante de tinta:</strong> Algunos fabricantes proveen perfiles ICC para sus tintas + impresoras específicas. No son perfectos pero son mucho mejor que nada.</li>
+            <li><strong>Perfiles genéricos del RIP:</strong> Softwares como Maintop, Acrorip o Flexi incluyen perfiles genéricos. Funcionan como base pero necesitan ajuste.</li>
+            <li><strong>Contratar el servicio:</strong> En Migo Creativo ofrecemos calibración de perfiles ICC para tu equipo específico. Te ahorra la inversión en equipo y obtienes resultados profesionales.</li>
+        </ul>
+
+        <h2>🖥️ Cómo usar el perfil ICC en tu flujo de trabajo</h2>
+
+        <h3>En Photoshop</h3>
+        <ol>
+            <li>Editar → Ajustes de Color (Color Settings)</li>
+            <li>Espacio de trabajo: configura el perfil de tu impresora como espacio CMYK</li>
+            <li>Al exportar: Convertir a perfil → selecciona tu perfil ICC personalizado</li>
+        </ol>
+
+        <h3>En el RIP (DTF/Sublimación)</h3>
+        <ol>
+            <li>Configuración → Gestión de color → Cargar perfil ICC</li>
+            <li>Asigna el perfil a la combinación de tinta + media que estés usando</li>
+            <li>Activa "Gestión de color por el RIP" y desactiva la del driver de la impresora</li>
+        </ol>
+
+        <div class="mc-highlight-box">
+            <p><strong>🔑 Regla de oro:</strong> Solo UN dispositivo debe gestionar el color. O Photoshop O el RIP, nunca los dos al mismo tiempo. Si ambos intentan corregir, se corrigen mutuamente y el resultado es peor que sin perfil.</p>
+        </div>
+
+        <h2>✅ Resumen</h2>
+        <ul>
+            <li>Un perfil ICC es un <strong>traductor de colores</strong> entre pantalla e impresora</li>
+            <li>Es <strong>único</strong> para cada combinación de impresora + tinta + media</li>
+            <li>Sin perfil, <strong>estás adivinando</strong> y desperdiciando material</li>
+            <li>Con perfil, lo que ves en pantalla es <strong>lo que sale impreso</strong></li>
+            <li>Solo <strong>un dispositivo</strong> debe gestionar el color a la vez</li>
+        </ul>
+
+        <div class="text-center mt-4 mb-3">
+            <a href="https://wa.me/573023579755?text=Hola%20Miguel%2C%20necesito%20calibrar%20el%20perfil%20ICC%20de%20mi%20impresora" target="_blank" class="mc-btn-primary" style="font-size:1.05rem;padding:14px 36px;">💬 Calibrar mi impresora</a>
+        </div>
+
+        <div class="mc-post-author-box"><img src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Miguel Heredia"><div><h4>Miguel Heredia</h4><p>Fundador de Migo Creativo. Especialista en optimización de imágenes para serigrafía, DTF y sublimación en Bogotá, Colombia.</p></div></div>
+
+    </div></div></article>
+
+    <footer class="mc-footer mt-5"><div class="container py-4"><div class="mc-footer-bottom d-flex justify-content-between align-items-center flex-wrap"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p><p class="mb-0" style="color:var(--mc-text-muted);font-size:.8rem;">Miguel Heredia — CEO & Fundador</p></div></div></footer>
+    <script src="../assets/js/jquery.min.js"></script><script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>50)});</script>
     <script src="../assets/js/migobot.js"></script>
-</body>
-</html>
+</body></html>
