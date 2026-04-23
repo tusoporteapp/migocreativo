@@ -725,7 +725,7 @@ a:hover {
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: mc-scroll 150s linear infinite;
+  animation: mc-scroll 400s linear infinite;
 }
 .mc-testimonial-track:hover {
   animation-play-state: paused;
