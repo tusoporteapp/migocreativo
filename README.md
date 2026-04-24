@@ -173,3 +173,28 @@ Es un chatbot autocontenido que funciona como una Wiki de estampado textil. No r
 - **Todos los textos** deben ser en español (es-419, español latinoamericano)
 - **El tono** es profesional pero cercano, como un amigo experto que te explica las cosas
 - **Microsoft Edge** es el navegador predeterminado: SIEMPRE que Miguel quiera probar o ver la página, abre automáticamente el navegador usando el comando de terminal `start msedge [URL]`. No le pidas que abra el enlace manualmente.
+
+---
+
+## Últimas Optimizaciones (Abril 2026)
+
+### 1. UX Móvil (Mobile-First)
+- **Grid de 2 Columnas**: Se forzó la visualización de 2 items por línea en dispositivos móviles para la Tienda, Blog, Academia y secciones de Inicio usando la clase `row-cols-2`.
+- **Ajustes Visuales**: Reducción de espaciado (`g-2`) y optimización de tamaños de fuente en móviles mediante `bss-overrides.css`.
+
+### 2. Tienda y Conversión
+- **Personalización de Pedidos**: Se añadió un campo de **Nombre del Cliente** en el carrito flotante.
+- **WhatsApp Dinámico**: El mensaje enviado a WhatsApp ahora incluye el nombre del cliente y una lista detallada de los productos con sus precios.
+- **Unificación de Interfaz**: Se restauró el botón de WhatsApp y la navegación completa en todas las subpáginas (Tienda, Blog, Academia).
+
+### 3. SEO de Élite (Dominio de Buscadores)
+- **Datos Estructurados (JSON-LD)**: 
+  - `FAQPage`: Implementado para mostrar respuestas directamente en Google.
+  - `BreadcrumbList`: Mejora la jerarquía y apariencia en los resultados de búsqueda.
+  - `ProfessionalService`: Datos actualizados con reseñas y servicios específicos.
+- **Contenido Semántico**: Se añadieron secciones de "Preguntas Frecuentes" y "Búsquedas Relacionadas" ricas en palabras clave como *"diseños para dtf bogotá"*, *"separación de colores serigrafía"* y *"plantillas para sublimación"*.
+- **Sitemap & Robots**: `sitemap.xml` creado y vinculado en `robots.txt` para asegurar la indexación de todas las secciones.
+
+### 4. Analítica y Consistencia
+- **Firebase Analytics**: Integrado en todas las páginas para seguimiento unificado del tráfico y clics en WhatsApp.
+- **Footers Unificados**: Todas las subpáginas ahora comparten el mismo pie de página profesional y completo del inicio.
