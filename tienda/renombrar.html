@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 Renombrador de Diseños | Migo Creativo (Admin)</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <style>
+        :root {
+            --mc-orange: #FF7A00;
+            --mc-purple: #5B4FD6;
+            --mc-bg-deep: #0B0B18;
+            --mc-bg-card: #1A1A35;
+        }
+        body {
+            background: var(--mc-bg-deep);
+            font-family: 'Inter', sans-serif;
+            color: #eee;
+            padding: 20px;
+        }
+        .admin-header {
+            text-align: center;
+            padding: 20px 0 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+        .admin-header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .stat-pill .num { color: var(--mc-orange); }
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-bar button {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: #ccc;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .filter-bar button.active, .filter-bar button:hover {
+            background: var(--mc-orange);
+            border-color: var(--mc-orange);
+            color: white;
+        }
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .design-item {
+            background: var(--mc-bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .design-item.named {
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+        .design-item.named .status-dot {
+            background: #4ade80;
+        }
+        .design-item img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+        .design-controls {
+            padding: 12px;
+        }
+        .name-input {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .name-input:focus {
+            border-color: var(--mc-orange);
+            box-shadow: 0 0 0 3px rgba(255,122,0,0.2);
+        }
+        .name-input.saved {
+            border-color: #4ade80;
+        }
+        .tags-input {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            outline: none;
+        }
+        .tags-input:focus {
+            border-color: var(--mc-purple);
+        }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff6b6b;
+            margin-right: 6px;
+        }
+        .file-label {
+            font-size: 0.7rem;
+            color: #666;
+            word-break: break-all;
+        }
+        .btn-save-all {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--mc-orange), var(--mc-purple));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255,122,0,0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .btn-save-all:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255,122,0,0.5);
+        }
+        .progress-bar-custom {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mc-orange), #4ade80);
+            transition: width 0.5s;
+        }
+        .toast-msg {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4ade80;
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            z-index: 9999;
+            transform: translateX(200%);
+            transition: transform 0.3s;
+        }
+        .toast-msg.show { transform: translateX(0); }
+    </style>
+</head>
+<body>
+    <div class="admin-header">
+        <h1>🔧 Renombrador de Diseños</h1>
+        <p style="color: #999;">Escribe el nombre de cada diseño. Se guarda automáticamente al salir del campo.</p>
+        <div class="stats-bar">
+            <div class="stat-pill">Total: <span class="num" id="totalCount">0</span></div>
+            <div class="stat-pill">Nombrados: <span class="num" id="namedCount" style="color: #4ade80;">0</span></div>
+            <div class="stat-pill">Pendientes: <span class="num" id="pendingCount" style="color: #ff6b6b;">0</span></div>
+        </div>
+        <div class="progress-bar-custom">
+            <div class="progress-bar-fill" id="progressFill" style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <div class="filter-bar">
+        <button class="active" onclick="filterDesigns('all')">Todos</button>
+        <button onclick="filterDesigns('pending')">❌ Pendientes</button>
+        <button onclick="filterDesigns('named')">✅ Nombrados</button>
+    </div>
+
+    <div class="design-grid" id="designGrid"></div>
+
+    <button class="btn-save-all" onclick="exportMapping()">
+        💾 Exportar y Aplicar Nombres
+    </button>
+
+    <div class="toast-msg" id="toast">✅ ¡Guardado!</div>
+
+    <script>
+    let designs = [];
+    let nameMapping = {};
+    let currentFilter = 'all';
+
+    // Cargar datos
+    async function init() {
+        try {
+            const res = await fetch('data/designs.json?v=' + Date.now());
+            designs = await res.json();
+        } catch(e) {
+            alert('Error cargando designs.json');
+            return;
+        }
+
+        // Cargar mapeo existente desde localStorage
+        const saved = localStorage.getItem('mc_name_mapping');
+        if (saved) {
+            nameMapping = JSON.parse(saved);
+        }
+
+        // También intentar cargar del archivo
+        try {
+            const mapRes = await fetch('data/name_mapping.json?v=' + Date.now());
+            const serverMap = await mapRes.json();
+            // Merge: localStorage tiene prioridad
+            for (const [key, val] of Object.entries(serverMap)) {
+                if (!nameMapping[key]) {
+                    nameMapping[key] = val;
+                }
+            }
+        } catch(e) {}
+
+        renderDesigns();
+        updateStats();
+    }
+
+    function renderDesigns() {
+        const grid = document.getElementById('designGrid');
+        grid.innerHTML = '';
+
+        let filtered = designs;
+        if (currentFilter === 'pending') {
+            filtered = designs.filter(d => !nameMapping[d.filename] || !nameMapping[d.filename].name);
+        } else if (currentFilter === 'named') {
+            filtered = designs.filter(d => nameMapping[d.filename] && nameMapping[d.filename].name);
+        }
+
+        filtered.forEach(d => {
+            const mapping = nameMapping[d.filename] || {};
+            const isNamed = mapping.name && mapping.name.trim() !== '';
+
+            const div = document.createElement('div');
+            div.className = `design-item ${isNamed ? 'named' : ''}`;
+            div.dataset.filename = d.filename;
+
+            div.innerHTML = `
+                <img src="${d.image}" alt="${d.filename}" loading="lazy">
+                <div class="design-controls">
+                    <div style="display:flex; align-items:center; margin-bottom:6px;">
+                        <span class="status-dot"></span>
+                        <span class="file-label">${d.filename}</span>
+                    </div>
+                    <input type="text" class="name-input" placeholder="Nombre del diseño..." value="${mapping.name || ''}" data-filename="${d.filename}" onblur="saveName(this)" onkeydown="if(event.key==='Enter'){this.blur();this.nextElementSibling.focus();}">
+                    <input type="text" class="tags-input" placeholder="Tags (ej: mario gamer nintendo)" value="${mapping.tags || ''}" data-filename="${d.filename}" onblur="saveTags(this)" onkeydown="if(event.key==='Enter'){this.blur(); const next=this.closest('.design-item').nextElementSibling; if(next) next.querySelector('.name-input').focus();}">
+                </div>
+            `;
+            grid.appendChild(div);
+        });
+    }
+
+    function saveName(input) {
+        const filename = input.dataset.filename;
+        if (!nameMapping[filename]) nameMapping[filename] = {};
+        nameMapping[filename].name = input.value.trim();
+        
+        localStorage.setItem('mc_name_mapping', JSON.stringify(nameMapping));
+        
+        if (input.value.trim()) {
+            input.classList.add('saved');
+            input.closest('.design-item').classList.add('named');
+        } else {
+            input.classList.remove('saved');
+            input.closest('.design-item').classList.remove('named');
+        }
+        updateStats();
+    }
+
+    function saveTags(input) {
+        const filename = input.dataset.filename;
+        if (!nameMapping[filename]) nameMapping[filename] = {};
+        nameMapping[filename].tags = input.value.trim();
+        localStorage.setItem('mc_name_mapping', JSON.stringify(nameMapping));
+    }
+
+    function filterDesigns(filter) {
+        currentFilter = filter;
+        document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        renderDesigns();
+    }
+
+    function updateStats() {
+        const total = designs.length;
+        const named = designs.filter(d => nameMapping[d.filename] && nameMapping[d.filename].name).length;
+        const pending = total - named;
+
+        document.getElementById('totalCount').textContent = total;
+        document.getElementById('namedCount').textContent = named;
+        document.getElementById('pendingCount').textContent = pending;
+        document.getElementById('progressFill').style.width = `${(named/total)*100}%`;
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    async function exportMapping() {
+        // Generar el nuevo designs.json con nombres actualizados
+        const updatedDesigns = designs.map(d => {
+            const mapping = nameMapping[d.filename] || {};
+            return {
+                ...d,
+                name: mapping.name || d.name,
+                tags: mapping.tags || ''
+            };
+        });
+
+        // Descargar como archivo
+        const blob = new Blob([JSON.stringify(updatedDesigns, null, 2)], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'designs.json';
+        a.click();
+        URL.revokeObjectURL(url);
+
+        // También descargar el mapeo
+        const blob2 = new Blob([JSON.stringify(nameMapping, null, 2)], {type: 'application/json'});
+        const url2 = URL.createObjectURL(blob2);
+        const a2 = document.createElement('a');
+        a2.href = url2;
+        a2.download = 'name_mapping.json';
+        a2.click();
+        URL.revokeObjectURL(url2);
+
+        showToast('✅ ¡Archivos descargados! Copia designs.json a tienda/data/');
+    }
+
+    init();
+    </script>
+</body>
+</html>

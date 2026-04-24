@@ -104,11 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="design-card glass-panel" data-id="${design.id}" style="border-radius: 12px; overflow: hidden; position: relative;">
                     <div class="design-img-container" style="padding-bottom: 100%;">
                         <img src="${design.image}" alt="${design.name}" class="design-img" style="position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                        <div class="design-overlay" style="flex-direction: column;">
-                            <div class="add-icon mb-2">
+                        <div class="design-overlay">
+                            <div class="add-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                             </div>
-                            <span style="color: white; font-weight: 600; font-size: 0.9rem; text-align: center; padding: 0 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">${design.name}</span>
                         </div>
                     </div>
                 </div>
@@ -136,10 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Filtrar
+    // 3. Filtrar (busca en nombre Y tags)
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
-        const filtered = designs.filter(d => d.name.toLowerCase().includes(query));
+        const filtered = designs.filter(d => {
+            const nameMatch = d.name.toLowerCase().includes(query);
+            const tagMatch = d.tags && d.tags.toLowerCase().includes(query);
+            return nameMatch || tagMatch;
+        });
         renderDesigns(filtered);
     });
 

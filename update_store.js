@@ -3,6 +3,7 @@ const path = require('path');
 
 const imgDir = path.join(__dirname, 'assets', 'img', 'tienda');
 const dataFile = path.join(__dirname, 'tienda', 'data', 'designs.json');
+const mappingFile = path.join(__dirname, 'tienda', 'data', 'name_mapping.json');
 
 // Crear directorios si no existen
 if (!fs.existsSync(imgDir)) {
@@ -14,6 +15,17 @@ if (!fs.existsSync(path.dirname(dataFile))) {
 
 function updateStore() {
     console.log('Leyendo diseños en: ' + imgDir);
+    
+    // Cargar name_mapping.json si existe
+    let nameMapping = {};
+    if (fs.existsSync(mappingFile)) {
+        try {
+            nameMapping = JSON.parse(fs.readFileSync(mappingFile, 'utf8'));
+            console.log(`Cargado name_mapping.json con ${Object.keys(nameMapping).length} entradas.`);
+        } catch(e) {
+            console.log('No se pudo cargar name_mapping.json, usando nombres por defecto.');
+        }
+    }
     
     fs.readdir(imgDir, (err, files) => {
         if (err) {
@@ -27,16 +39,23 @@ function updateStore() {
         files.forEach((file, index) => {
             const ext = path.extname(file).toLowerCase();
             if (validExtensions.includes(ext)) {
-                // Generar nombre legible: quitar extensión, reemplazar _, -, y capitalizar
-                let name = path.basename(file, ext);
-                name = name.replace(/[-_]/g, ' ');
-                // Capitalizar cada palabra
-                name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                // Buscar nombre en el mapeo
+                const mapping = nameMapping[file] || {};
+                let name = mapping.name || '';
+                let tags = mapping.tags || '';
+                
+                // Si no hay nombre en el mapeo, generar uno del archivo
+                if (!name) {
+                    name = path.basename(file, ext);
+                    name = name.replace(/[-_]/g, ' ');
+                    name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                }
 
                 designs.push({
                     id: index + 1,
                     name: name,
-                    image: `../assets/img/tienda/${file}`, // Ruta relativa desde tienda/index.html
+                    tags: tags,
+                    image: `../assets/img/tienda/${file}`,
                     filename: file
                 });
             }
@@ -47,7 +66,8 @@ function updateStore() {
                 console.error('Error guardando designs.json:', err);
                 return;
             }
-            console.log(`¡Éxito! Se han encontrado y guardado ${designs.length} diseños en la tienda.`);
+            const namedCount = designs.filter(d => !d.name.startsWith('InShot')).length;
+            console.log(`¡Éxito! ${designs.length} diseños guardados. (${namedCount} con nombre personalizado, ${designs.length - namedCount} pendientes).`);
         });
     });
 }
