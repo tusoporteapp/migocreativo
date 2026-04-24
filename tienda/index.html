@@ -87,6 +87,39 @@
             transform: scale(1.08);
         }
         
+        .design-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 11, 24, 0.7);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+            z-index: 5;
+        }
+        .design-card:hover .design-overlay {
+            opacity: 1;
+        }
+        .add-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--mc-orange), var(--mc-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255,122,0,0.4);
+            transform: scale(0.5);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .design-card:hover .add-icon {
+            transform: scale(1);
+        }
+        
         .design-info {
             padding: 1.5rem;
             flex-grow: 1;
@@ -338,12 +371,17 @@
 
     <!-- Header -->
     <header class="store-header">
-        <div class="container mc-reveal">
+        <div class="container">
             <span class="mc-badge mb-3 glass-panel" style="border: 1px solid var(--mc-orange); color: var(--mc-orange);">💎 Catálogo Premium</span>
             <h1 class="mc-hero-title" style="font-size: 3.5rem;">Colección <span class="mc-gradient-text">Master</span></h1>
             <p class="mc-hero-subtitle" style="font-size: 1.15rem; max-width: 700px; margin: 0 auto; color: var(--mc-text-muted);">
-                Diseños de alto nivel ya optimizados para producción. 
-                <br><strong style="color: #4ade80;">✨ ¡Lleva más de 10 y obtén precio de mayorista!</strong>
+                Todos los diseños están <strong>100% optimizados</strong> listos para imprimir en:<br>
+                <div class="d-flex justify-content-center gap-2 mt-3 mb-4 flex-wrap">
+                    <span class="badge" style="background: rgba(255,122,0,0.2); color: var(--mc-orange); border: 1px solid var(--mc-orange); padding: 8px 15px; font-size: 0.95rem;">🖨️ Serigrafía</span>
+                    <span class="badge" style="background: rgba(37,211,102,0.2); color: #4ade80; border: 1px solid #4ade80; padding: 8px 15px; font-size: 0.95rem;">🎯 DTF</span>
+                    <span class="badge" style="background: rgba(91,79,214,0.2); color: #a78bfa; border: 1px solid #a78bfa; padding: 8px 15px; font-size: 0.95rem;">✨ Sublimación</span>
+                </div>
+                <strong style="color: #4ade80; font-size: 1.2rem;">✨ ¡Lleva más de 10 y obtén precio de mayorista automáticamente!</strong>
             </p>
         </div>
     </header>
@@ -352,11 +390,11 @@
     <section class="py-5" style="min-height: 60vh;">
         <div class="container">
             <!-- Search Bar -->
-            <div class="row justify-content-center mb-5 mc-reveal">
+            <div class="row justify-content-center mb-5">
                 <div class="col-md-8 col-lg-6">
-                    <div class="input-group glass-panel" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-                        <span class="input-group-text" style="background: transparent; border: none; padding-left: 1.5rem;">🔍</span>
-                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar diseños por nombre..." style="background: transparent; border: none; color: white; padding: 1.2rem; box-shadow: none;">
+                    <div class="input-group glass-panel" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,122,0,0.4); box-shadow: 0 0 20px rgba(255,122,0,0.15);">
+                        <span class="input-group-text" style="background: transparent; border: none; padding-left: 1.5rem; font-size: 1.2rem;">🔍</span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar diseños por nombre (ej. Calavera)..." style="background: transparent; border: none; color: white; padding: 1.2rem; box-shadow: none; font-size: 1.05rem;">
                     </div>
                 </div>
             </div>

@@ -288,6 +288,98 @@
         </div>
     </section>
 
+    <!-- Catalog Marquee Section -->
+    <style>
+        @keyframes mc-scroll-fast {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 1rem)); }
+        }
+        .catalog-marquee-card {
+            width: 250px;
+            height: 250px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        .catalog-marquee-card::after {
+            content: 'Ver en Tienda →';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            background: rgba(255,122,0,0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            transition: bottom 0.3s ease;
+        }
+        .catalog-marquee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255,122,0,0.3);
+            border-color: var(--mc-orange);
+        }
+        .catalog-marquee-card:hover::after {
+            bottom: 0;
+        }
+        .catalog-marquee-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <section class="py-5" id="catalogo-marquee" style="background: var(--mc-bg-deep); overflow: hidden;">
+        <div class="container mb-4">
+            <div class="d-flex justify-content-between align-items-end mc-reveal">
+                <div>
+                    <span class="mc-badge mb-2">🔥 Nuevos Diseños</span>
+                    <h2 class="mc-section-title mb-0" style="font-size: 2.2rem;">Catálogo <span class="mc-gradient-text">Premium</span></h2>
+                </div>
+                <a href="tienda/index.html" class="mc-btn-outline d-none d-md-flex">Ver Catálogo Completo →</a>
+            </div>
+        </div>
+        
+        <div class="mc-catalog-carousel mt-4 mc-reveal mc-reveal-delay-1" style="overflow: hidden; padding: 1rem 0;">
+            <div class="mc-catalog-track" id="mc-catalog-track" style="display: flex; gap: 2rem; width: max-content; animation: mc-scroll-fast 40s linear infinite;">
+                <!-- JS Inject -->
+            </div>
+        </div>
+        <div class="container mt-4 d-md-none text-center">
+            <a href="tienda/index.html" class="mc-btn-outline w-100">Ver Catálogo Completo →</a>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('tienda/data/designs.json')
+            .then(res => res.json())
+            .then(data => {
+                const track = document.getElementById('mc-catalog-track');
+                if(!data || data.length === 0) return;
+                
+                const items = data.slice(0, 15);
+                let html = '';
+                items.forEach(d => {
+                    html += `
+                    <div class="catalog-marquee-card" onclick="window.location.href='tienda/index.html'">
+                        <img src="${d.image.replace('../', '')}" alt="${d.name}" loading="lazy">
+                    </div>`;
+                });
+                
+                // Duplicate for infinite scroll
+                track.innerHTML = html + html;
+                
+                track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+                track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+            })
+            .catch(err => console.log('Error loading catalog', err));
+    });
+    </script>
+
     <!-- Services Section -->
     <section class="mc-services py-5" id="servicios">
         <div class="container py-5">
