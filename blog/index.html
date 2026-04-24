@@ -3,13 +3,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Blog de Estampado Textil | Migo Creativo</title>
-    <meta name="description" content="Artículos, tutoriales y noticias sobre serigrafía, DTF, sublimación y diseño gráfico para estampadores.">
+    <title>Blog de Serigrafía, DTF y Sublimación | Migo Creativo</title>
+    <meta name="description" content="Artículos técnicos, noticias y guías sobre estampado textil. Todo lo que necesitas saber sobre impresoras DTF, mallas de serigrafía y perfiles de color.">
+    <meta name="keywords" content="blog serigrafía, noticias DTF, guías sublimación, trucos para estampadores, Migo Creativo blog, diseño textil colombia">
     <link rel="canonical" href="https://migocreativo.com/blog/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://migocreativo.com/blog/">
+    <meta property="og:title" content="Blog para Estampadores | Migo Creativo">
+    <meta property="og:description" content="Consejos técnicos y noticias sobre el mundo del estampado textil en Colombia.">
+    <meta property="og:image" content="https://migocreativo.com/assets/img/LOGO/A_high-quality,_professional_202603301254.webp">
+    
     <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBwccZeqikEXWmsE5oBEueZYDX1HRkljMY",
+        authDomain: "migocreativo-com.firebaseapp.com",
+        projectId: "migocreativo-com",
+        storageBucket: "migocreativo-com.firebasestorage.app",
+        messagingSenderId: "504387667122",
+        appId: "1:504387667122:web:7446e5862b67d3d60ef5ab",
+        measurementId: "G-FBX628JT6Y"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    
+      // Global listener for custom events from conversion.js
+      import { logEvent } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      window.addEventListener('mcAnalytics', (e) => {
+          const { name, params } = e.detail;
+          logEvent(analytics, name, params);
+      });
+    </script>
     <style>
         .mc-search-box { background: var(--mc-bg-surface); border: 1px solid var(--mc-glass-border); border-radius: var(--mc-radius-sm); padding: 15px 20px; color: var(--mc-text); font-size: 1.1rem; width: 100%; margin-bottom: 2rem; }
         .mc-search-box:focus { outline: none; border-color: var(--mc-orange); box-shadow: 0 0 0 3px rgba(255,122,0,.2); }
@@ -40,9 +71,16 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tienda/index.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#herramientas">Herramientas</a></li>
                     <li class="nav-item"><a class="nav-link" href="../academia/index.html">Academia</a></li>
                     <li class="nav-item"><a class="nav-link active" href="index.html">Blog</a></li>
-                                    </ul>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
+                </ul>
+                <a class="mc-btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/573023579755" target="_blank">
+                    💬 WhatsApp
+                </a>
             </div>
         </div>
     </nav>
@@ -614,7 +652,64 @@
         </div>
     </section>
 
-    <footer class="mc-footer"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <!-- SEO Blog Content -->
+    <section class="py-5" style="background: var(--mc-bg-deep); border-top: 1px solid var(--mc-glass-border);">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h2 style="font-size: 1.2rem; color: var(--mc-orange); font-weight: 700;">Guías de DTF y Sublimación</h2>
+                    <p style="font-size: 0.9rem; color: var(--mc-text-muted); line-height: 1.6;">Nuestro blog es la fuente #1 de <strong>noticias sobre DTF</strong> y <strong>trucos para sublimación</strong> en español. Aprende a solucionar problemas de cabezales, elegir las mejores tintas y optimizar tus tiempos de producción.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2 style="font-size: 1.2rem; color: var(--mc-orange); font-weight: 700;">Técnicas de Serigrafía Moderna</h2>
+                    <p style="font-size: 0.9rem; color: var(--mc-text-muted); line-height: 1.6;">Explora artículos sobre <strong>separación de color avanzada</strong>, uso de mallas y emulsiones. El contenido está diseñado para que tanto principiantes como expertos mejoren su técnica de estampado textil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mc-footer" id="footer">
+        <div class="container py-4 py-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mc-footer-brand">
+                        <img src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo">
+                        <span>MIGOCREATIVO</span>
+                    </div>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem; max-width: 300px;">Diseñador de estampado textil en Bogotá, Colombia. Optimización de imágenes para serigrafía, DTF y sublimación con calidad profesional.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Servicios</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html#servicios">Serigrafía</a></li>
+                        <li><a href="../index.html#servicios">DTF</a></li>
+                        <li><a href="../index.html#servicios">Sublimación</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Empresa</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../tienda/index.html">Catálogo</a></li>
+                        <li><a href="../academia/index.html">Academia</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3>Contacto Directo</h3>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem;">¿Tienes un proyecto? Escríbeme directamente y te respondo en menos de 24 horas.</p>
+                    <a href="https://wa.me/573023579755" target="_blank" class="mc-btn-primary" style="font-size: 0.9rem; padding: 10px 24px;">
+                        💬 Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="mc-footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p>
+                <p class="mb-0" style="color: var(--mc-text-muted); font-size: 0.8rem;">Miguel Heredia — CEO & Fundador</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
         <script>

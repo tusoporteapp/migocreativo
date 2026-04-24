@@ -3,13 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Academia Gratuita de Estampado | Migo Creativo</title>
-    <meta name="description" content="Aprende gratis desde cero hasta nivel avanzado todo sobre Serigrafía, DTF y Sublimación con Migo Creativo.">
+    <title>Cursos y Tutoriales de Estampado Textil | Academia Migo Creativo</title>
+    <meta name="description" content="Aprende serigrafía, DTF y sublimación desde cero con Migo Creativo. Tutoriales profesionales, consejos técnicos y cursos para llevar tu taller al siguiente nivel.">
+    <meta name="keywords" content="curso de serigrafía bogotá, aprender DTF, tutoriales sublimación, técnicas de estampado textil, separar colores serigrafía, academia migo creativo, miguel heredia, aprender a estampar camisetas">
     <link rel="canonical" href="https://migocreativo.com/academia/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://migocreativo.com/academia/">
+    <meta property="og:title" content="Aprende Estampado Textil | Academia Migo Creativo">
+    <meta property="og:description" content="Domina las técnicas de Serigrafía, DTF y Sublimación con nuestros tutoriales expertos.">
+    <meta property="og:image" content="https://migocreativo.com/assets/img/LOGO/A_professional,_clean_202603301256.webp">
     <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBwccZeqikEXWmsE5oBEueZYDX1HRkljMY",
+        authDomain: "migocreativo-com.firebaseapp.com",
+        projectId: "migocreativo-com",
+        storageBucket: "migocreativo-com.firebasestorage.app",
+        messagingSenderId: "504387667122",
+        appId: "1:504387667122:web:7446e5862b67d3d60ef5ab",
+        measurementId: "G-FBX628JT6Y"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    
+      // Global listener for custom events from conversion.js
+      import { logEvent } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      window.addEventListener('mcAnalytics', (e) => {
+          const { name, params } = e.detail;
+          logEvent(analytics, name, params);
+      });
+    </script>
     <style>
         .mc-filter-btn { background: transparent; border: 1px solid var(--mc-glass-border); color: var(--mc-text-muted); border-radius: 100px; padding: 6px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all var(--mc-transition-fast); }
         .mc-filter-btn:hover { border-color: var(--mc-orange); color: var(--mc-orange); }
@@ -35,10 +65,16 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tienda/index.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#herramientas">Herramientas</a></li>
                     <li class="nav-item"><a class="nav-link active" href="index.html">Academia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="glosario.html">Glosario</a></li>
                     <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
-                                    </ul>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
+                </ul>
+                <a class="mc-btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/573023579755" target="_blank">
+                    💬 WhatsApp
+                </a>
             </div>
         </div>
     </nav>
@@ -46,7 +82,7 @@
     <header style="padding-top:120px; padding-bottom: 60px; background: var(--mc-bg-deep); border-bottom: 1px solid var(--mc-glass-border);">
         <div class="container text-center">
             <span class="mc-badge mb-3">🎓 Conocimiento Compartido</span>
-            <h1 class="mc-section-title">Academia <span class="mc-gradient-text">Migo Creativo</span></h1>
+                <h1 class="mc-section-title">Aprende <span class="mc-gradient-text">Serigrafía, DTF y Sublimación</span> Gratis</h1>
             <p class="mc-section-subtitle ms-auto me-auto">El plan de estudios completo para convertirte en un profesional del estampado textil. Desde conceptos básicos hasta técnicas avanzadas.</p>
             
             <div class="mt-4 p-4 rounded text-start mx-auto" style="max-width: 600px; background: var(--mc-bg-card); border: 1px solid var(--mc-glass-border);">
@@ -462,7 +498,48 @@
         </div>
     </section>
 
-    <footer class="mc-footer"><div class="container py-4"><div class="mc-footer-bottom text-center"><p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p></div></div></footer>
+    <!-- Footer -->
+    <footer class="mc-footer" id="footer">
+        <div class="container py-4 py-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mc-footer-brand">
+                        <img src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo">
+                        <span>MIGOCREATIVO</span>
+                    </div>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem; max-width: 300px;">Diseñador de estampado textil en Bogotá, Colombia. Optimización de imágenes para serigrafía, DTF y sublimación con calidad profesional.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Servicios</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html#servicios">Serigrafía</a></li>
+                        <li><a href="../index.html#servicios">DTF</a></li>
+                        <li><a href="../index.html#servicios">Sublimación</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Empresa</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../tienda/index.html">Catálogo</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3>Contacto Directo</h3>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem;">¿Tienes un proyecto? Escríbeme directamente y te respondo en menos de 24 horas.</p>
+                    <a href="https://wa.me/573023579755" target="_blank" class="mc-btn-primary" style="font-size: 0.9rem; padding: 10px 24px;">
+                        💬 Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="mc-footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p>
+                <p class="mb-0" style="color: var(--mc-text-muted); font-size: 0.8rem;">Miguel Heredia — CEO & Fundador</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/js/academia-progress.js"></script>

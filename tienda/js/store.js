@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingCart = document.getElementById('floatingCart');
     const cartCount = document.getElementById('cartCount');
     const cartItemsContainer = document.getElementById('cartItems');
-    const btnWhatsApp = document.getElementById('btnWhatsApp');
     const cartTotalElement = document.getElementById('cartTotal');
+    const btnWhatsApp = document.getElementById('btnWhatsApp');
+    const userNameInput = document.getElementById('userName');
     const currencySelector = document.getElementById('currencySelector');
     
     const discountProgress = document.getElementById('discountProgress');
@@ -271,8 +272,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isDiscountActive = cart.length >= DISCOUNT_THRESHOLD;
         const totalLocalFormatted = formatCurrency(totalUSD);
+        const userName = userNameInput.value.trim();
 
-        let message = "Hola Miguel, quiero pedir los siguientes diseños de tu catálogo:\n\n";
+        let message = "Hola Miguel, ";
+        if (userName) {
+            message += `soy *${userName}* y quiero pedir los siguientes diseños de tu catálogo:\n\n`;
+        } else {
+            message += "quiero pedir los siguientes diseños de tu catálogo:\n\n";
+        }
         
         if (isDiscountActive) {
             message += "🎉 *¡Aliqué para el descuento mayorista!*\n\n";
@@ -300,4 +307,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const encodedMessage = encodeURIComponent(message);
         btnWhatsApp.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
     }
+
+    // Actualizar link de WhatsApp cuando el usuario escribe su nombre
+    userNameInput.addEventListener('input', () => {
+        const totalUSD = cart.reduce((acc, item) => acc + item.currentPrice, 0);
+        updateWhatsAppLink(totalUSD);
+    });
 });

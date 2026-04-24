@@ -3,15 +3,70 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Catálogo Premium | Migo Creativo</title>
-    <meta name="description" content="Catálogo de diseños optimizados para serigrafía, DTF y sublimación.">
+    <title>Diseños para DTF, Sublimación y Serigrafía | Catálogo Premium Migo Creativo</title>
+    <meta name="description" content="Explora nuestro catálogo de diseños premium optimizados para DTF, sublimación y serigrafía. Archivos en alta resolución listos para imprimir y estampar. ¡Lleva 12 o más y activa el precio mayorista!">
+    <meta name="keywords" content="diseños para DTF, plantillas sublimación, diseños para serigrafía, vectores para camisetas, descargar diseños DTF, arte para estampado textil, catálogo diseños Migo Creativo, diseños para tazas, diseños para gorras">
+    <link rel="canonical" href="https://migocreativo.com/tienda/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://migocreativo.com/tienda/">
+    <meta property="og:title" content="Diseños para DTF, Sublimación y Serigrafía | Migo Creativo">
+    <meta property="og:description" content="Catálogo exclusivo de diseños listos para estampar. Optimización profesional para DTF, Sublimación y Serigrafía con precios de mayorista.">
+    <meta property="og:image" content="https://migocreativo.com/assets/img/LOGO/A_high-quality,_professional_202603301254.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://migocreativo.com/tienda/">
+    <meta property="twitter:title" content="Diseños para DTF, Sublimación y Serigrafía | Migo Creativo">
+    <meta property="twitter:description" content="Descarga los mejores diseños para tu taller de estampado. Listos para DTF, Sublimación y Serigrafía.">
+    <meta property="twitter:image" content="https://migocreativo.com/assets/img/LOGO/A_high-quality,_professional_202603301254.webp">
     <meta name="theme-color" content="#FF7A00">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://migocreativo.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Catálogo de Diseños",
+        "item": "https://migocreativo.com/tienda/"
+      }]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/jpeg" href="../assets/img/LOGO/LOGO NUEVO.jpg">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="../assets/css/bss-overrides.css">
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBwccZeqikEXWmsE5oBEueZYDX1HRkljMY",
+        authDomain: "migocreativo-com.firebaseapp.com",
+        projectId: "migocreativo-com",
+        storageBucket: "migocreativo-com.firebasestorage.app",
+        messagingSenderId: "504387667122",
+        appId: "1:504387667122:web:7446e5862b67d3d60ef5ab",
+        measurementId: "G-FBX628JT6Y"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    
+      // Global listener for custom events from conversion.js
+      import { logEvent } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+      window.addEventListener('mcAnalytics', (e) => {
+          const { name, params } = e.detail;
+          logEvent(analytics, name, params);
+      });
+    </script>
     <style>
         /* Ambient Background */
         body {
@@ -364,7 +419,11 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html#herramientas">Herramientas</a></li>
                     <li class="nav-item"><a class="nav-link" href="../academia/index.html">Academia</a></li>
                     <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
                 </ul>
+                <a class="mc-btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://wa.me/573023579755" target="_blank">
+                    💬 WhatsApp
+                </a>
             </div>
         </div>
     </nav>
@@ -373,7 +432,7 @@
     <header class="store-header">
         <div class="container">
             <span class="mc-badge mb-3 glass-panel" style="border: 1px solid var(--mc-orange); color: var(--mc-orange);">💎 Catálogo Premium</span>
-            <h1 class="mc-hero-title" style="font-size: 3.5rem;">Colección <span class="mc-gradient-text">Master</span></h1>
+            <h1 class="mc-section-title">Catálogo de Diseños para <span class="mc-gradient-text">DTF, Sublimación y Serigrafía</span></h1>
             <p class="mc-hero-subtitle" style="font-size: 1.15rem; max-width: 700px; margin: 0 auto; color: var(--mc-text-muted);">
                 Todos los diseños están <strong>100% optimizados</strong> listos para imprimir en:<br>
                 <div class="d-flex justify-content-center gap-2 mt-3 mb-4 flex-wrap">
@@ -423,6 +482,10 @@
             </div>
         </div>
 
+        <div style="margin-bottom: 1rem;">
+            <input type="text" id="userName" class="form-control" placeholder="Tu Nombre o Negocio" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 10px; padding: 10px; font-size: 0.9rem;">
+        </div>
+
         <div class="currency-selector-container">
             <span style="font-size: 0.85rem; color: var(--mc-text-muted);">Moneda:</span>
             <select id="currencySelector" class="currency-select">
@@ -458,10 +521,68 @@
         </a>
     </div>
 
+    <!-- SEO Content for Store -->
+    <section class="py-5" style="background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2 style="font-size: 1.25rem; color: var(--mc-orange); font-weight: 700; margin-bottom: 1rem;">Diseños para DTF listos para Estampar</h2>
+                    <p style="font-size: 0.9rem; color: var(--mc-text-muted); line-height: 1.6;">Si buscas <strong>diseños para DTF en Bogotá</strong> o cualquier parte de Colombia, nuestro catálogo está optimizado con fondos transparentes y alta resolución (300 DPI) para garantizar estampados vibrantes y duraderos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 style="font-size: 1.25rem; color: var(--mc-orange); font-weight: 700; margin-bottom: 1rem;">Plantillas para Sublimación de Alta Calidad</h2>
+                    <p style="font-size: 0.9rem; color: var(--mc-text-muted); line-height: 1.6;">Nuestros <strong>diseños para sublimación</strong> incluyen el perfil de color adecuado para que tus estampados en tazas, gorras y camisetas tengan colores fieles a la realidad. Olvídate de los colores opacos.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2 style="font-size: 1.25rem; color: var(--mc-orange); font-weight: 700; margin-bottom: 1rem;">Archivos para Serigrafía Profesional</h2>
+                    <p style="font-size: 0.9rem; color: var(--mc-text-muted); line-height: 1.6;">¿Necesitas separación de colores? Además del catálogo, ofrecemos servicios de <strong>diseñador de serigrafía</strong> para preparar tus artes en policromía, simulado o colores planos listos para el revelado.</p>
+                </div>
+            </div>
+            <div class="mt-4 p-3 text-center" style="background: rgba(255,255,255,0.02); border-radius: 12px; font-size: 0.8rem; color: var(--mc-text-muted);">
+                <strong>Tags populares:</strong> descargar diseños dtf, vectores para sublimación, separación de color serigrafía, artes para camisetas bogotá, migo creativo catálogo.
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="py-4 mt-5" style="background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.05);">
-        <div class="container text-center">
-            <p class="mb-0 text-muted" style="font-size: 0.9rem;">© 2026 Migo Creativo. Todos los derechos reservados.</p>
+    <footer class="mc-footer" id="footer">
+        <div class="container py-4 py-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mc-footer-brand">
+                        <img src="../assets/img/LOGO/LOGO NUEVO.jpg" alt="Migo Creativo">
+                        <span>MIGOCREATIVO</span>
+                    </div>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem; max-width: 300px;">Diseñador de estampado textil en Bogotá, Colombia. Optimización de imágenes para serigrafía, DTF y sublimación con calidad profesional.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Servicios</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html#servicios">Serigrafía</a></li>
+                        <li><a href="../index.html#servicios">DTF</a></li>
+                        <li><a href="../index.html#servicios">Sublimación</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3>Empresa</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="../academia/index.html">Academia</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3>Contacto Directo</h3>
+                    <p style="color: var(--mc-text-muted); font-size: 0.9rem;">¿Tienes un proyecto? Escríbeme directamente y te respondo en menos de 24 horas.</p>
+                    <a href="https://wa.me/573023579755" target="_blank" class="mc-btn-primary" style="font-size: 0.9rem; padding: 10px 24px;">
+                        💬 Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="mc-footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0">© 2026 Migo Creativo | Hecho con ❤️ en Colombia</p>
+                <p class="mb-0" style="color: var(--mc-text-muted); font-size: 0.8rem;">Miguel Heredia — CEO & Fundador</p>
+            </div>
         </div>
     </footer>
 
