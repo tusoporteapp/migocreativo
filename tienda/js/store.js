@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Intl.NumberFormat('es-CO', { style: 'currency', currency: currentCurrency, maximumFractionDigits: 0 }).format(converted);
     }
 
-    // 1. Cargar datos
-    fetch('data/designs.json')
+    // 1. Cargar datos (cache-buster para evitar Service Worker)
+    fetch('data/designs.json?v=' + Date.now())
         .then(response => {
             if (!response.ok) throw new Error('No se pudo cargar designs.json');
             return response.json();
