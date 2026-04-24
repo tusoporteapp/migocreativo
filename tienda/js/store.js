@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach(design => {
             const col = document.createElement('div');
-            col.className = 'col-sm-6 col-md-4 col-lg-3';
+            col.className = 'col';
             
             // Solo imagen con overlay
             col.innerHTML = `
