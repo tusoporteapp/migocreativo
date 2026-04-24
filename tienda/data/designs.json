@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Calavera Rockera",
+    "image": "../assets/img/tienda/calavera_rockera.png",
+    "filename": "calavera_rockera.png"
+  },
+  {
+    "id": 2,
+    "name": "Flores Vintage",
+    "image": "../assets/img/tienda/flores_vintage.png",
+    "filename": "flores_vintage.png"
+  },
+  {
+    "id": 3,
+    "name": "Leon Geometrico",
+    "image": "../assets/img/tienda/leon_geometrico.png",
+    "filename": "leon_geometrico.png"
+  }
+]

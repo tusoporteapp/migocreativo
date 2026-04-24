@@ -172,4 +172,4 @@ Es un chatbot autocontenido que funciona como una Wiki de estampado textil. No r
 - **Blog es solo texto** — no agregar imágenes en los posts a menos que Miguel lo pida
 - **Todos los textos** deben ser en español (es-419, español latinoamericano)
 - **El tono** es profesional pero cercano, como un amigo experto que te explica las cosas
-- **Microsoft Edge** es el navegador del usuario — NO usar Chrome para pruebas
+- **Microsoft Edge** es el navegador predeterminado: SIEMPRE que Miguel quiera probar o ver la página, abre automáticamente el navegador usando el comando de terminal `start msedge [URL]`. No le pidas que abra el enlace manualmente.
