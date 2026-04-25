@@ -361,8 +361,13 @@
         <div class="container mb-4">
             <div class="d-flex justify-content-between align-items-end mc-reveal">
                 <div>
-                    <span class="mc-badge mb-2">🔥 Nuevos Diseños</span>
-                    <h2 class="mc-section-title mb-0" style="font-size: 2.2rem;">Catálogo <span class="mc-gradient-text">Premium</span></h2>
+                    <span class="mc-badge mb-2">🔥 <span id="mc-design-badge-count" data-mc-count="0" data-mc-suffix="+">0+</span> Diseños</span>
+                    <h2 class="mc-section-title mb-0" style="font-size: 2.2rem;">
+                        Catálogo <span class="mc-gradient-text">Premium</span>
+                        <span class="mc-count-badge">
+                            <span id="mc-design-title-count" data-mc-count="0" data-mc-suffix="+">0+</span> Disponibles
+                        </span>
+                    </h2>
                 </div>
                 <a href="tienda/index.html" class="mc-btn-outline d-none d-md-flex">Ver Catálogo Completo →</a>
             </div>
@@ -386,6 +391,20 @@
                 const track = document.getElementById('mc-catalog-track');
                 if(!data || data.length === 0) return;
                 
+                // Actualizar contadores
+                const totalDesigns = data.length;
+                const badgeCount = document.getElementById('mc-design-badge-count');
+                const titleCount = document.getElementById('mc-design-title-count');
+                
+                if(badgeCount) {
+                    badgeCount.dataset.mcCount = totalDesigns;
+                    if(window.mcAnimateCount) window.mcAnimateCount(badgeCount);
+                }
+                if(titleCount) {
+                    titleCount.dataset.mcCount = totalDesigns;
+                    if(window.mcAnimateCount) window.mcAnimateCount(titleCount);
+                }
+
                 const items = data.slice(0, 15);
                 let html = '';
                 items.forEach(d => {

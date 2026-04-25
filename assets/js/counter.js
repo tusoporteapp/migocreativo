@@ -16,9 +16,14 @@
   }, { threshold: 0.5 });
 
   counters.forEach(el => observer.observe(el));
+  
+  // Expose function globally for dynamic updates
+  window.mcAnimateCount = animateCount;
 
   function animateCount(el) {
     const target = parseInt(el.dataset.mcCount);
+    if (isNaN(target)) return;
+    
     const suffix = el.dataset.mcSuffix || '';
     const duration = 2000;
     const start = performance.now();

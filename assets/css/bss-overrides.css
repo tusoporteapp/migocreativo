@@ -156,6 +156,21 @@ a:hover {
   text-transform: uppercase;
 }
 
+.mc-count-badge {
+  background: var(--mc-orange);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 10px;
+  box-shadow: 0 4px 12px rgba(255,122,0,0.3);
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* --- Navbar Glassmorphism --- */
 #mainNav {
   background: var(--mc-glass) !important;
